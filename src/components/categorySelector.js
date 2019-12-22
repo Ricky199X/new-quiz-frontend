@@ -15,5 +15,8 @@ class CategorySelector {
       this.render()
    }
 
-   
+   render() {
+      this.allCategoriesContainer.innerHTML = this.categories.map(category => category.html).join(' ')
+   }
+
 }
