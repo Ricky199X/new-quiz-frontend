@@ -21,7 +21,18 @@ class Category {
       this.name = description
    }
 
-   
+   get htmlWithLabel() {
+      return (`
+         <div class="category-border">
+            <ul>
+               <li>Name: ${this.name} </li>
+               <li>Description: ${this.description}</li>
+            </ul>
+            <button id="select-category" data-id="${this.id}">Select</button>
+         </div>
+      `)
+   }
+
 
 
 }
