@@ -1,6 +1,7 @@
 class CategorySelector {
    constructor() {
       this.categories = []
+      this.adapter = new CategoryAdapter()
       this.initBindingsAndEventListeners()
       this.fetchAndLoadCategories()
       this.selectedCategory = null
@@ -39,8 +40,21 @@ class CategorySelector {
    }
 
    async fetchAndLoadCategories() {
-      this.categories = await Category.retrieveAll()
-      this.render()
+      this.adapter
+      .getCategories()
+      .then(function(categoryJSON) {
+         const categoryInfo = categoryJSON.data
+         return categoryInfo
+      }).then(categoryInfo => {
+         this.categories = categoryInfo.map(function(categoryObject) {
+            return new Category(categoryObject)
+         })
+         console.log(this.categories)
+      }).then(() => {
+         this.render()
+      }) 
+   
+      // this.render()
    }
 
    render() {
