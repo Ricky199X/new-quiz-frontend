@@ -1,0 +1,20 @@
+{
+   "categories":  [
+      {
+         "id": 1,
+         "name": "Sports",
+         "description": "Quizzes about sports"
+      },
+      {
+         "id": 2,
+         "name": "Music",
+         "description": "Quizzes about music"
+      },
+      {
+         "id": 3,
+         "name": "Geography",
+         "description": "Quizzes about places"
+      }
+   ]
+
+}
