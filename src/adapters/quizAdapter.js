@@ -80,18 +80,25 @@ class QuizAdapter {
       this.baseUrl = "http://localhost:3000/quizzes"
    }
 
-   quizzesByCategoryUrl(id) {
-      return `http://localhost:3000/categories/${id}/quizzes`
-   }
+   // quizzesByCategoryUrl(id) {
+   //    return `http://localhost:3000/categories/${id}/quizzes`
+   // }
 
    fetchQuizByTitle(title) {
       return fetch(this.baseUrl).then(response => {
-         // console.log(response)
+         // console.log(response.json())
          return response.json();
        }).then(data => {
          // Work with JSON data here
-         return data
-       }).catch(err => {
+         const quizData = data.data
+         console.log(typeof quizData)
+         return quizData
+       }).then(quizData => {
+         this.selection = quizData.filter(quizObj => quizObj.attributes.title === title)
+         console.log(this.selection)
+       })
+       
+       .catch(err => {
          // Do something for an error here
         alert(err);
        })
