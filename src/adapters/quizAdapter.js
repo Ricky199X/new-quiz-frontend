@@ -51,7 +51,7 @@ const QuizAdapter = (function() {
       }
 
       async getQuizzes() {
-         const response = await fetch(this.categoriesURL)
+         const response = await fetch(this.categoryQuizzesUrl)
          this.checkStatus(response)
          return await response.json()
       }
