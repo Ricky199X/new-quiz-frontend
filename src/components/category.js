@@ -12,15 +12,21 @@ class Category {
    //    }
    // }
 
+   constructor(categoryJSON) {
+      this.id = categoryJSON.id
+      this.name = categoryJSON.attributes.name
+      this.description = categoryJSON.attributes.description
+   }
+
 
    
-   constructor(params) {
-      // descructuring this object - taking params + making variable for each property of these params
-      const {id, name, description} = params
-      this.id = id
-      this.name = name
-      this.description = description
-   }
+   // constructor(params) {
+   //    // descructuring this object - taking params + making variable for each property of these params
+   //    const {id, name, description} = params
+   //    this.id = id
+   //    this.name = name
+   //    this.description = description
+   // }
 
    get htmlWithLabel() {
       return (`
