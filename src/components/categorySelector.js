@@ -1,6 +1,7 @@
 class CategorySelector {
    constructor() {
       this.categories = []
+      this.categoryQuizzes = []
       this.adapter = new CategoryAdapter()
       this.initBindingsAndEventListeners()
       this.fetchAndLoadCategories()
@@ -10,6 +11,7 @@ class CategorySelector {
    initBindingsAndEventListeners() {
       this.container = document.querySelector('#category-selector')
       this.allCategoriesContainer = document.querySelector('#all-categories')
+      this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
       this.allCategoriesContainer.addEventListener('click', this.selectCategoryHandler.bind(this))
    }
 
@@ -36,7 +38,15 @@ class CategorySelector {
             this.selectedCategory = selection
          }
       }
-      console.log(this.selectedCategory)
+      if (this.selectedCategory) {
+         this.adapter.getQuizzesByCategory(this.selectedCategory).then((quizArray) => {
+            this.categoryQuizzes = quizArray
+            this.renderSelectedCategoryQuizzes()
+         })
+      } else {
+         this.categoryQuizzesContainer.innerHTML = ""
+      }
+      
    }
 
    async fetchAndLoadCategories() {
@@ -49,16 +59,20 @@ class CategorySelector {
          this.categories = categoryInfo.map(function(categoryObject) {
             return new Category(categoryObject)
          })
-         console.log(this.categories)
+         // console.log(this.categories)
       }).then(() => {
          this.render()
       }) 
-   
-      // this.render()
    }
+
+   // async fet
 
    render() {
       this.allCategoriesContainer.innerHTML = this.categories.map(category => category.htmlWithLabel).join(' ')
+   }
+
+   renderSelectedCategoryQuizzes() {
+      this.categoryQuizzesContainer.innerHTML = `<ul>${this.categoryQuizzes.map(quiz => quiz.liHTML()).join("")}</ul>`
    }
 
 

@@ -6,6 +6,8 @@
 //       this.selectedQuiz = null
 //    }
 
+this.answers = []
+
 //    initBindingsAndEventListeners() {
 //       this.container = document.querySelector('#category-quizzes')
 //       this.quizzesContainer = document.querySelector('#selected-category-quizzes')
