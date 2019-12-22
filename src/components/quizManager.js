@@ -1,4 +1,4 @@
-class QuizManager() {
+class QuizManager {
 
    constructor() {
       this.answers = []
