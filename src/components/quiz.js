@@ -1,13 +1,18 @@
 class Quiz {
 
-   constructor{
+   constructor() {
       this.quizzes = []
       this.initBindingsAndEventListeners()
    }
 
    initBindingsAndEventListeners() {
-      this.categoryQuizContainer = document.querySelector('#category-quizzes')
-      this.categoryQuizContainer.addEventListener('click', this.handleQuizClick(this))
+      this.container = document.querySelector('#category-quizzes')
+      this.quizContainer = document.querySelector('#quiz-div')
+      this.quizContainer.addEventListener('click', this.handleQuizClick(this))
+   }
+
+   handleQuizClick(event) {
+      console.log('clicked')
    }
 
 }
