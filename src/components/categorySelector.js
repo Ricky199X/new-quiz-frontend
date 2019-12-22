@@ -35,7 +35,7 @@ class CategorySelector {
             this.selectedCategory = selection
          }
       }
-      console.log(this.selectedCategory)
+      // console.log(this.selectedCategory)
    }
 
    async fetchAndLoadCategories() {
