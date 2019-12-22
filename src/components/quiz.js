@@ -6,7 +6,8 @@ class Quiz {
    }
 
    initBindingsAndEventListeners() {
-      this.container = document.querySelector()
+      this.categoryQuizContainer = document.querySelector('#category-quizzes')
+      this.categoryQuizContainer.addEventListener('click', this.handleQuizClick(this))
    }
 
 }
