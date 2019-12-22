@@ -17,14 +17,9 @@ class QuizManager {
 
    selectQuizHandler(event) {
       this.selectedQuiz = event.target.innerText
+      console.log(this)
       console.log(this.selectedQuiz)
-      // this.adapter.selectQuiz(this.selectedQuizId)
-      
-
-
-      
-   // } else {
-   //    this.container.innerHTML = ""
+      this.adapter.selectQuizByTitle(this.selectedQuiz)
    }
 
 }
