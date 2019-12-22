@@ -25,7 +25,7 @@ const CategoryAdapter = (function() {
       }
 
       get categoriesURL() {
-         reuturn `${this.baseURL}/categories`
+         return `${this.baseURL}/categories`
       }
 
       categoryURL(id){
@@ -38,6 +38,26 @@ const CategoryAdapter = (function() {
             'Accept': 'application/json'
          }
       }
+
+      async getCategories() {
+         const response = await fetch(this.categoriesURL)
+         this.checkStatus(response)
+         return await response.json()
+      }
+
+      async getCategory(id) {
+         const response = await fetch(this.categoryURL(id))
+         this.checkStatus(response)
+         return await response.json()
+      }
+
+
+      checkStatus(response) {
+         if (response.status > 299 || response.status < 200) {
+            throw new Error(response.status)
+         }
+      }
+
 
    }
 
