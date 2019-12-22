@@ -3,6 +3,9 @@ class quizManager() {
    constructor() {
       this.answers = []
       this.questions = []
+      this.adapter = new QuizAdapter()
+      this.initBindingAndEventListeners()
+      this.selectedQuiz = null
    }
 
 }
