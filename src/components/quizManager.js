@@ -1,12 +1,19 @@
-class quizManager() {
+class QuizManager() {
 
    constructor() {
       this.answers = []
-      this.questions = []
+      this.quizQuestions = []
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
       this.selectedQuiz = null
    }
+
+   initBindingAndEventListeners() {
+      this.container = document.querySelector('#app-container')
+      this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
+      this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
+   }
+
 
 }
 
