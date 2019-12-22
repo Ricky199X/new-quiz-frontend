@@ -80,13 +80,8 @@ class QuizAdapter {
       this.baseUrl = "http://localhost:3000/quizzes"
    }
 
-   // quizzesByCategoryUrl(id) {
-   //    return `http://localhost:3000/categories/${id}/quizzes`
-   // }
-
    fetchQuizByTitle(title) {
       return fetch(this.baseUrl).then(response => {
-         // console.log(response.json())
          return response.json();
        }).then(data => {
          // Work with JSON data here
@@ -94,7 +89,6 @@ class QuizAdapter {
          return quizData
        }).then(quizData => {
          const filteredQuizArray = quizData.filter(quizObj => quizObj.attributes.title === title)
-         // console.log(filteredQuizArray)
          return filteredQuizArray
          // need to now map this single quiz object to a new instance of Quiz
        }).then(filteredQuizArray => {
@@ -104,7 +98,6 @@ class QuizAdapter {
           console.log(this.selectedQuiz)
           return this.selectedQuiz
        }).catch(err => {
-         // Do something for an error here
         alert(err);
        })
    }
