@@ -18,7 +18,7 @@ class Category {
       const {id, name, description} = params
       this.id = id
       this.name = name
-      this.name = description
+      this.description = description
    }
 
    get htmlWithLabel() {

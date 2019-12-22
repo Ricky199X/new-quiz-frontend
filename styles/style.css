@@ -12,5 +12,12 @@ body {
    background: gray;
    border-radius: 10px;
 
+}
+
+.category-border {
+   border: 5px solid black;
+   margin: 5px;
+   border-radius: 5px;
+   display: inline-flex;
 
 }
