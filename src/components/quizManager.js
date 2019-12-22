@@ -1,3 +1,12 @@
+class quizManager() {
+
+   constructor() {
+      this.answers = []
+      this.questions = []
+   }
+
+}
+
 // class QuizSelector {
 //    constructor() {
 //       this.quizzes = []
@@ -6,7 +15,6 @@
 //       this.selectedQuiz = null
 //    }
 
-this.answers = []
 
 //    initBindingsAndEventListeners() {
 //       this.container = document.querySelector('#category-quizzes')
