@@ -91,14 +91,19 @@ class QuizAdapter {
        }).then(data => {
          // Work with JSON data here
          const quizData = data.data
-         console.log(typeof quizData)
          return quizData
        }).then(quizData => {
-         this.selection = quizData.filter(quizObj => quizObj.attributes.title === title)
-         console.log(this.selection)
-       })
-       
-       .catch(err => {
+         const filteredQuizArray = quizData.filter(quizObj => quizObj.attributes.title === title)
+         // console.log(filteredQuizArray)
+         return filteredQuizArray
+         // need to now map this single quiz object to a new instance of Quiz
+       }).then(filteredQuizArray => {
+          this.selectedQuiz = filteredQuizArray.map(function(quizObj) {
+             return new Quiz(quizObj)
+          })
+          console.log(this.selectedQuiz)
+          return this.selectedQuiz
+       }).catch(err => {
          // Do something for an error here
         alert(err);
        })
