@@ -18,7 +18,7 @@ class CategorySelector {
       // this is why we bound this to it up top
       if (event.target.classList.contains('select-category')) {
          const id = parseInt(event.target.dataset.id)
-         const selection = this.categories.find(category => category.id === id)
+         const selection = this.categories.find(category => parseInt(category.id) === id)
 
          if (selection === this.selectedCategory) {
             event.target.parentElement.style.background = "rgb(217, 238, 237)"
