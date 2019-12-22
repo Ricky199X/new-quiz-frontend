@@ -28,7 +28,7 @@ class Category {
                <li>Name: ${this.name} </li>
                <li>Description: ${this.description}</li>
             </ul>
-            <button id="select-category" data-id="${this.id}">Select</button>
+            <button class="select-category" data-id="${this.id}">Select</button>
          </div>
       `)
    }
