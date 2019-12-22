@@ -77,23 +77,23 @@
 class QuizAdapter {
 
    constructor() {
-      this.baseUrl = "http://localhost:3000/categories"
+      this.baseUrl = "http://localhost:3000/quizzes"
    }
 
+   quizzesByCategoryUrl(id) {
+      return `http://localhost:3000/categories/${id}/quizzes`
+   }
 
-   selectQuizByTitle(name) {
-      // const categoryLiList = document.querySelectorAll('li')
-
-      // for(let i = 0; i < categoryLiList.length; i++) {
-      //    let element = categoryLiList[i]
-      //    // want to add clickable event to each element of the category node list 
-      //    element.addEventListener('click', (event) => {
-      //       event.preventDefault()
-      //       // now at this point, we want to call a function that will find the quizzes associated with that category that we clicked
-      //       // need to construct renderCategoryQuizzes function within the category class
-      //       const categoryId = event.target.dataset.id
-      //       this.getQuizzesByCategory(categoryId)
-      //    })
-      // }
+   fetchQuizByTitle(title) {
+      return fetch(this.baseUrl).then(response => {
+         // console.log(response)
+         return response.json();
+       }).then(data => {
+         // Work with JSON data here
+         return data
+       }).catch(err => {
+         // Do something for an error here
+        alert(err);
+       })
    }
 }

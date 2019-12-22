@@ -19,7 +19,13 @@ class QuizManager {
       this.selectedQuiz = event.target.innerText
       console.log(this)
       console.log(this.selectedQuiz)
-      this.adapter.selectQuizByTitle(this.selectedQuiz)
+      // this populates this.selectedQuiz with the selected Quizzes name
+      // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
+      this.adapter.fetchQuizByTitle(this.selectedQuiz)
+   }
+
+   fetchAndLoadQuiz() {
+      
    }
 
 }
