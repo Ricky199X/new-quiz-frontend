@@ -20,6 +20,25 @@ const CategoryAdapter = (function() {
          }
       }
 
+      get baseURL() {
+         return `http://localhost:3000`
+      }
+
+      get categoriesURL() {
+         reuturn `${this.baseURL}/categories`
+      }
+
+      categoryURL(id){
+         return `${this.categoriesURL}/${id}`
+      }
+
+      get headers() {
+         const stdHeader = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+         }
+      }
+
    }
 
 })()
