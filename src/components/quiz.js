@@ -1,18 +1,15 @@
 class Quiz {
 
-   // constructor() {
-   //    this.quizzes = []
-   //    this.initBindingsAndEventListeners()
-   // }
+   static async retrieveAllQuizzes() {
 
-   // initBindingsAndEventListeners() {
-   //    this.container = document.querySelector('#category-quizzes')
-   //    this.quizContainer = document.querySelector('#quiz-div')
-   //    this.quizContainer.addEventListener('click', this.handleQuizClick(this))
-   // }
+      try {
+         const json = await QuizAdapter.instance.getQuizzes()
+      } catch(err) {
+         
+      }
 
-   // handleQuizClick(event) {
-   //    console.log('clicked')
-   // }
+
+
+   }
 
 }

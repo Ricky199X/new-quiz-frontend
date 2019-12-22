@@ -9,7 +9,7 @@ class QuizSelector {
    initBindingsAndEventListeners() {
       this.container = document.querySelector('#category-quizzes')
       this.quizzesContainer = document.querySelector('#selected-category-quizzes')
-      this.quizzesContainer.addEventListener('click', this.quizHandler.bind(this))
+      // this.quizzesContainer.addEventListener('click', this.quizHandler.bind(this))
    }
 
    // selectCategoryHandler(event) {
@@ -39,7 +39,7 @@ class QuizSelector {
    // }
 
    async fetchAndLoadCategoryQuizzes() {
-      this.quizzes = await Quiz.retrieveAll()
+      this.quizzes = await Quiz.retrieveAllQuizzes()
       this.render()
    }
 
