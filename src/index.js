@@ -4,5 +4,5 @@ document.addEventListener('DOMContentLoaded', () => {
    const container = document.querySelector('#app-container')
 
    // instantiate an app with that 
-   new ApplicationCache(container)
+   new App(container)
 })
