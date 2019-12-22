@@ -15,6 +15,18 @@ class QuizManager {
    }
 
 
+   selectQuizHandler(event) {
+      const id = parseInt(event.target.dataset.id)
+      console.log(id)
+      // this.adapter.selectQuiz(this.selectedQuizId)
+      
+
+
+      
+   // } else {
+   //    this.container.innerHTML = ""
+   }
+
 }
 
 // class QuizSelector {

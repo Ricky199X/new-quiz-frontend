@@ -29,7 +29,7 @@ class CategoryAdapter {
          return data
       }).then(data => {
          this.selectedQuizzes = data.map(function(quizObj) {
-            console.log(quizObj)
+            // console.log(quizObj)
             return new Quiz(quizObj)
          })
          // console.log(this)

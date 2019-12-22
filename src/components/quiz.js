@@ -1,6 +1,6 @@
 class Quiz {
    constructor(quizJSON) {
-      console.log(quizJSON)
+      // console.log(quizJSON)
       this.id = quizJSON.id
       this.title = quizJSON.attributes.title
       this.description = quizJSON.attributes.description
@@ -8,7 +8,7 @@ class Quiz {
    }
 
    liHTML() {
-      return `<li>${this.title}</li>`
+      return `<li data-id="${this.id}">${this.title}</li>`
    }
 
    // function to renders a quiz's questions

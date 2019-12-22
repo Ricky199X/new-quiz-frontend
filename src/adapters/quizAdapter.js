@@ -73,3 +73,27 @@
 //    }
 
 // })()
+
+class QuizAdapter {
+
+   constructor() {
+      this.baseUrl = "http://localhost:3000/categories"
+   }
+
+
+   selectQuiz() {
+      // const categoryLiList = document.querySelectorAll('li')
+
+      // for(let i = 0; i < categoryLiList.length; i++) {
+      //    let element = categoryLiList[i]
+      //    // want to add clickable event to each element of the category node list 
+      //    element.addEventListener('click', (event) => {
+      //       event.preventDefault()
+      //       // now at this point, we want to call a function that will find the quizzes associated with that category that we clicked
+      //       // need to construct renderCategoryQuizzes function within the category class
+      //       const categoryId = event.target.dataset.id
+      //       this.getQuizzesByCategory(categoryId)
+      //    })
+      // }
+   }
+}
