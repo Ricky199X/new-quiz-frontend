@@ -10,4 +10,18 @@ class Category {
          return null
       }
    }
+
+
+   
+   constructor(params) {
+      // descructuring this object - taking params + making variable for each property of these params
+      const {id, name, description} = params
+      this.id = id
+      this.name = name
+      this.name = description
+   }
+
+   
+
+
 }
