@@ -65,8 +65,6 @@ class CategorySelector {
       }) 
    }
 
-   // async fet
-
    render() {
       this.allCategoriesContainer.innerHTML = this.categories.map(category => category.htmlWithLabel).join(' ')
    }
