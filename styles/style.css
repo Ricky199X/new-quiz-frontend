@@ -1,3 +1,16 @@
-body{
+body {
    background: rgb(217, 238, 237);
+}
+
+#quiz-div {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   border: 10px solid rgb(223, 102, 102);
+   width: 700px;
+   height: 500px;
+   background: gray;
+   border-radius: 10px;
+
+
 }
