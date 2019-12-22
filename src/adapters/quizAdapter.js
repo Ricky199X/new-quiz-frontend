@@ -81,7 +81,7 @@ class QuizAdapter {
    }
 
 
-   selectQuiz() {
+   selectQuizByName(name) {
       // const categoryLiList = document.querySelectorAll('li')
 
       // for(let i = 0; i < categoryLiList.length; i++) {

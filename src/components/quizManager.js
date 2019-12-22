@@ -16,8 +16,8 @@ class QuizManager {
 
 
    selectQuizHandler(event) {
-      const id = parseInt(event.target.dataset.id)
-      console.log(id)
+      this.selectedQuiz = event.target.innerText
+      console.log(this.selectedQuiz)
       // this.adapter.selectQuiz(this.selectedQuizId)
       
 
