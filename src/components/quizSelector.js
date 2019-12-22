@@ -8,7 +8,7 @@ class QuizSelector {
 
    initBindingsAndEventListeners() {
       this.container = document.querySelector('#category-quizzes')
-      this.quizzesContainer = document.querySelector('#category-quizzes')
+      this.quizzesContainer = document.querySelector('#selected-category-quizzes')
       this.quizzesContainer.addEventListener('click', this.quizHandler.bind(this))
    }
 
@@ -38,13 +38,13 @@ class QuizSelector {
    //    // console.log(this.selectedCategory)
    // }
 
-   // async fetchAndLoadCategories() {
-   //    this.categories = await Category.retrieveAll()
-   //    this.render()
-   // }
+   async fetchAndLoadCategoryQuizzes() {
+      this.quizzes = await Quiz.retrieveAll()
+      this.render()
+   }
 
-   // render() {
-   //    this.allCategoriesContainer.innerHTML = this.categories.map(category => category.htmlWithLabel).join(' ')
-   // }
+   render() {
+      this.quizzesContainer.innerHTML = this.quizzes.map(quiz => quiz.htmlWithLabel).join(' ')
+   }
 
 }
