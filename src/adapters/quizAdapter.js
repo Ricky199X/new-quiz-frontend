@@ -28,8 +28,19 @@ const QuizAdapter = (function() {
          return `${this.baseURL}/categories`
       }
 
+      // gets one singular category + everything in it
       categoryURL(id){
          return `${this.categoriesURL}/${id}`
+      }
+
+      // gets that one singular category + its associated quizzes
+      categoryQuizzesUrl(){
+         return `${this.categoryURL}/quizzes`
+      }
+
+      // gets one instance of that category's quizzes
+      categoryQuizUrl(id) {
+         return `${this.categoryQuizzesUrl}/${id}`
       }
 
       get headers() {

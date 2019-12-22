@@ -2,7 +2,7 @@ class QuizSelector {
    constructor() {
       this.quizzes = []
       this.initBindingsAndEventListeners()
-      this.fetchAndLoadQuizzes()
+      this.fetchAndLoadCategoryQuizzes()
       this.selectedQuiz = null
    }
 
