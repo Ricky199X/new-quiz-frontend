@@ -3,6 +3,7 @@ class QuizManager {
    constructor() {
       this.correctAnswers = []
       this.currentQuiz = []
+      this.currentQuizQuestions = []
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
       this.selectedQuiz = null
@@ -17,16 +18,21 @@ class QuizManager {
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
-      // console.log(this.selectedQuizName)
       // this populates this.selectedQuiz with the selected Quizzes name
       // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
       this.adapter.fetchQuizByTitle(this.selectedQuizName).then((quiz) => {
          // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
          this.currentQuiz = quiz
+         this.loadQuestions()
       })
    }
 
+   // now we want to load the questions, set them to this.quizQuestions
+   loadQuestions() {
+      console.log(this.currentQuiz)
+      this.currentQuiz.map(())
+   }
 
 
 }
