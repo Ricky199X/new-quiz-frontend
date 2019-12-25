@@ -30,8 +30,10 @@ class QuizManager {
 
    // now we want to load the questions, set them to this.quizQuestions
    loadQuestions() {
-      console.log(this.currentQuiz)
-      this.currentQuiz.map(())
+      this.currentQuizQuestions = this.currentQuiz[0].questions.map((question) => {
+         return question
+      })
+      console.log(this.currentQuizQuestions)
    }
 
 
