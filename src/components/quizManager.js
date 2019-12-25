@@ -17,13 +17,17 @@ class QuizManager {
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
-      console.log(this.selectedQuizName)
+      // console.log(this.selectedQuizName)
       // this populates this.selectedQuiz with the selected Quizzes name
       // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
-      this.adapter.fetchQuizByTitle(this.selectedQuizName)
-      // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
-    
+      this.adapter.fetchQuizByTitle(this.selectedQuizName).then((quiz) => {
+         // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
+      // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
+         this.currentQuiz = quiz
+      })
    }
+
+
 
 }
 
