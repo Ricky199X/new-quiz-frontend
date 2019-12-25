@@ -4,6 +4,7 @@ class QuizManager {
       this.correctAnswers = []
       this.currentQuiz = []
       this.currentQuizQuestions = []
+      this.currentQuizChoices = []
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
       this.selectedQuiz = null
@@ -26,23 +27,35 @@ class QuizManager {
          this.currentQuiz = quiz
          this.loadQuestions()
          this.loadAnswers()
+         this.loadChoices()
       })
    }
 
    // now we want to load the questions, set them to this.quizQuestions
    loadQuestions() {
       this.currentQuizQuestions = this.currentQuiz[0].questions.map((question) => {
-         return question
+         return question.prompt
       })
-      console.log(this.currentQuizQuestions)
    }
 
+   // loads array of answers for each question
    loadAnswers() {
       this.correctAnswers = this.currentQuiz[0].questions.map((question) => {
          return question.correct_answer
       })
-      console.log(this.correctAnswers)
    }
+
+   // loads an array of choices for each question
+   loadChoices() {
+      this.currentQuizChoices = this.currentQuiz[0].questions.map((question) => {
+         return question.content
+      })
+      console.log(this)
+   }
+
+
+
+
 
 
 }
