@@ -8,6 +8,19 @@ class Quiz {
       this.answers = quizJSON.attributes.questions.answers
    }
 
+   get htmlWithLabel() {
+      return (`
+         <div class="quiz-border">
+            <ul>
+               <li>Name: ${this.title} </li>
+               <li>Description: ${this.description}</li>
+            </ul>
+            <button class="select-quiz" data-id="${this.id}">Start Quiz</button>
+            <button class="back">Go Back to Main Menu</button>
+         </div>
+      `)
+   }
+
    liHTML() {
       return `<li data-id="${this.id}">${this.title}</li>`
    }

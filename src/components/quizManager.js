@@ -28,6 +28,8 @@ class QuizManager {
          this.loadQuestions()
          this.loadAnswers()
          this.loadChoices()
+      }).then(() => {
+         this.render()
       })
    }
 
@@ -53,6 +55,11 @@ class QuizManager {
       console.log(this)
    }
 
+
+   // function to render selected quiz to the page
+   render() {
+      this.container.innerHTML = this.currentQuiz.map(quiz => quiz.htmlWithLabel).join(' ')
+   }
 
 
 
