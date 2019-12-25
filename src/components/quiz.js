@@ -5,6 +5,7 @@ class Quiz {
       this.title = quizJSON.attributes.title
       this.description = quizJSON.attributes.description
       this.questions = quizJSON.attributes.questions
+      this.answers = quizJSON.attributes.questions.answers
    }
 
    liHTML() {

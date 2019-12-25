@@ -80,6 +80,10 @@ class QuizAdapter {
       this.baseUrl = "http://localhost:3000/quizzes"
    }
 
+   // quizzesByCategoryUrl(id) {
+   //    return `http://localhost:3000/categories/${id}/quizzes`
+   // }
+
    fetchQuizByTitle(title) {
       return fetch(this.baseUrl).then(response => {
          return response.json();
@@ -101,4 +105,12 @@ class QuizAdapter {
         alert(err);
        })
    }
+
+   loadQuestions(quizObj) {
+      // console.log('hello!')
+      console.log(this.selectedQuiz)
+   }
+
+
+
 }

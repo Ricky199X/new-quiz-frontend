@@ -1,8 +1,8 @@
 class QuizManager {
 
    constructor() {
-      this.answers = []
-      this.quizQuestions = []
+      this.correctAnswers = []
+      this.currentQuiz = []
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
       this.selectedQuiz = null
@@ -16,15 +16,13 @@ class QuizManager {
 
 
    selectQuizHandler(event) {
-      this.selectedQuiz = event.target.innerText
-      console.log(this.selectedQuiz)
+      this.selectedQuizName = event.target.innerText
+      console.log(this.selectedQuizName)
       // this populates this.selectedQuiz with the selected Quizzes name
       // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
-      this.adapter.fetchQuizByTitle(this.selectedQuiz)
-   }
-
-   fetchAndLoadQuiz() {
-      
+      this.adapter.fetchQuizByTitle(this.selectedQuizName)
+      // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
+    
    }
 
 }
