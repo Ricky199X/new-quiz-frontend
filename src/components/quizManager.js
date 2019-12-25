@@ -25,6 +25,7 @@ class QuizManager {
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
          this.currentQuiz = quiz
          this.loadQuestions()
+         this.loadAnswers()
       })
    }
 
@@ -34,6 +35,13 @@ class QuizManager {
          return question
       })
       console.log(this.currentQuizQuestions)
+   }
+
+   loadAnswers() {
+      this.correctAnswers = this.currentQuiz[0].questions.map((question) => {
+         return question.correct_answer
+      })
+      console.log(this.correctAnswers)
    }
 
 
