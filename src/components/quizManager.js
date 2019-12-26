@@ -38,7 +38,10 @@ class QuizManager {
    startQuizHandler() {
       this.startButton = document.querySelector('button')
       this.startButton.addEventListener('click', event => {
-         console.log('hello!')
+         console.log('you have clicked the start button - cool!')
+         // at this point, we want to:
+         // 1. start the 2 minute timer
+         // 2. render the quiz 
       })
    }
 
