@@ -14,6 +14,7 @@ class QuizManager {
       this.container = document.querySelector('#app-container')
       this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
       this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
+      this.quizBorder.addEventListener('click', this.startQuizHandler.bind(this))
    }
 
 
@@ -31,6 +32,10 @@ class QuizManager {
       }).then(() => {
          this.render()
       })
+   }
+
+   startQuizHandler(event) {
+      this.
    }
 
    // now we want to load the questions, set them to this.quizQuestions
@@ -61,6 +66,7 @@ class QuizManager {
       this.container.innerHTML = this.currentQuiz.map(quiz => quiz.htmlWithLabel).join(' ')
    }
 
+   
 
 
 

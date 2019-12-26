@@ -15,7 +15,7 @@ class Quiz {
                <li>Name: ${this.title} </li>
                <li>Description: ${this.description}</li>
             </ul>
-            <button class="select-quiz" data-id="${this.id}">Start Quiz</button>
+            <button class="start-quiz" data-id="${this.id}">Start Quiz</button>
             <button class="back">Go Back to Main Menu</button>
          </div>
       `)
@@ -27,10 +27,12 @@ class Quiz {
 
    // function to renders a quiz's questions
    renderQuestions() {
-      for(let i = 0; i < this.questions.length; i++) {
-         return `<li> ${i + 1}. ${this.questions[i].prompt}</li>`
+      for(let i = 0; i < this.currentQuizQuestions.length; i++) {
+         return `<li> ${i + 1}. ${this.currentQuizQuestions[i].prompt}</li>`
       }
    }
+
+   
 
 }
 
