@@ -99,16 +99,11 @@ class QuizAdapter {
           this.selectedQuiz = filteredQuizArray.map(function(quizObj) {
              return new Quiz(quizObj)
           })
-          console.log(this.selectedQuiz)
+         //  console.log(this.selectedQuiz)
           return this.selectedQuiz
        }).catch(err => {
         alert(err);
        })
-   }
-
-   loadQuestions(quizObj) {
-      // console.log('hello!')
-      console.log(this.selectedQuiz)
    }
 
 
