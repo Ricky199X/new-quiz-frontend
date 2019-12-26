@@ -5,6 +5,7 @@ class Quiz {
       this.title = quizJSON.attributes.title
       this.description = quizJSON.attributes.description
       this.questions = quizJSON.attributes.questions
+      // when you render the questions - make to parse JSON.questions.content
       this.answers = quizJSON.attributes.questions.answers
    }
 
@@ -28,9 +29,36 @@ class Quiz {
    // function to renders a quiz's questions
    renderQuestions() {
       for(let i = 0; i < this.currentQuizQuestions.length; i++) {
-         return `<li> ${i + 1}. ${this.currentQuizQuestions[i].prompt}</li>`
+         console.log(currentQuizQuestions)
+         return `<h3> ${i + 1}. ${this.currentQuizQuestions[i].prompt}</h3>`
       }
    }
+
+
+   quizTitle() {
+      return (`
+      <h1>${this.title}</h1>
+
+      `)
+   }
+  
+   
+
+      // // now we want to load the questions, set them to this.quizQuestions
+      // loadQuestions() {
+      //    this.currentQuizQuestions = this.currentQuiz.questions.map((question) => {
+            
+      //       return question
+      //    })
+      // }
+   
+      // // loads array of answers for each question
+      // loadAnswers() {
+      //    this.correctAnswers = this.currentQuiz.questions.map((question) => {
+      //       return question.correct_answer
+      //    })
+      // }
+   
 
 }
 

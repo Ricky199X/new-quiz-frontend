@@ -1,10 +1,7 @@
 class QuizManager {
 
    constructor() {
-      this.correctAnswers = []
-      this.currentQuiz = []
-      this.currentQuizQuestions = []
-      this.currentQuizChoices = []
+      this.currentQuiz = null
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
       this.selectedQuiz = null
@@ -16,21 +13,23 @@ class QuizManager {
       this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
    }
 
+   initQuizBindingAndEventListeners() {
+      this.header = document.querySelector('header')
+      this.form = document.querySelector('#quiz-form')
+   }
+
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
       // this populates this.selectedQuiz with the selected Quizzes name
       // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
+      this.renderStaticHTML()
+      this.initQuizBindingAndEventListeners()
       this.adapter.fetchQuizByTitle(this.selectedQuizName).then((quiz) => {
          // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
-         this.currentQuiz = quiz
-         this.loadQuestions()
-         this.loadAnswers()
-         this.loadChoices()
-      }).then(() => {
-         this.render()
-         this.startQuizHandler()
+         this.currentQuiz = quiz[0]
+         this.renderQuizInfo()
       })
    }
 
@@ -45,36 +44,46 @@ class QuizManager {
       })
    }
 
-   // now we want to load the questions, set them to this.quizQuestions
-   loadQuestions() {
-      this.currentQuizQuestions = this.currentQuiz[0].questions.map((question) => {
-         return question.prompt
-      })
-   }
 
-   // loads array of answers for each question
-   loadAnswers() {
-      this.correctAnswers = this.currentQuiz[0].questions.map((question) => {
-         return question.correct_answer
-      })
-   }
-
-   // loads an array of choices for each question
-   loadChoices() {
-      this.currentQuizChoices = this.currentQuiz[0].questions.map((question) => {
-         return question.content
-      })
-      console.log(this)
-   }
 
 
    // function to render selected quiz to the page
    render() {
-      this.container.innerHTML = this.currentQuiz.map(quiz => quiz.htmlWithLabel).join(' ')
+      this.container.innerHTML = this.currentQuiz.htmlWithLabel
    }
 
-   
+   staticHTML() {
+      return (`
+      <body>
+      <div id='container'>
+         <header>
+         <div class="loader"></div>
+            
+         </header>
 
+         <section>
+            <div id='results'></div>
+            <form name="quiz-form" id="quiz-form" >   
+              
+
+      
+            </form>
+         </section>
+      </div>
+   
+   </body>
+      
+      `)
+   }
+
+   renderStaticHTML() {
+      this.container.innerHTML = this.staticHTML()
+   }
+   
+   renderQuizInfo() {
+      this.header.innerHTML = this.currentQuiz.quizTitle()
+      this.form.innerHTML = this.currentQuiz.quizForm()
+   }
 
 
 
