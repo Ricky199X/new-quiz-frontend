@@ -79,7 +79,10 @@ class QuizManager {
    renderQuizInfo() {
       this.header.innerHTML = this.currentQuiz.quizTitle()
       this.form.innerHTML = this.currentQuiz.quizForm()
+      this.form.innerHTML = this.currentQuiz.renderQuestions()
    }
+
+
 
 
 

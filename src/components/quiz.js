@@ -28,9 +28,13 @@ class Quiz {
 
    // function to renders a quiz's questions
    renderQuestions() {
-      for(let i = 0; i < this.currentQuizQuestions.length; i++) {
-         console.log(currentQuizQuestions)
-         return `<h3> ${i + 1}. ${this.currentQuizQuestions[i].prompt}</h3>`
+      for(let i = 0; i < this.questions.length; i++) {
+         console.log(this.questions)
+         return (`
+            <h3> ${i + 1}. ${this.questions[0][i]}</h3>
+            <input type = 'radio' name = "q${this.questions[i + 1]}" value="a" id="q1a">a. <br>
+            
+         `)
       }
    }
 
@@ -45,25 +49,7 @@ class Quiz {
    quizForm() {
       return (`
       <form name="quizForm " onsubmit="return submitAnswers()">   
-      <h3>1. In which HTML element do we put in JavaScript code?</h3>
-      <input type = "radio" name = "q1" value="a" id="q1a">a. &lt;js&gt;<br>
-      <input type = "radio" name = "q1" value="b" id="q1b">b. &lt;script&gt;<br>
-      <input type = "radio" name = "q1" value="c" id="q1c">c. &lt;script&gt;<br>
-      <input type = "radio" name = "q1" value="d" id="q1d">d. &lt;script&gt;<br>
-
-      <h3>2. 2 + 2 = ?</h3>
-      <input type = "radio" name = "q2" value="a" id="q2a">a. 5<br>
-      <input type = "radio" name = "q2" value="b" id="q2b">b. 1000<br>
-      <input type = "radio" name = "q2" value="c" id="q2c">c. 75<br>
-      <input type = "radio" name = "q2" value="d" id="q2d">d. 4<br>
-
-      <h3>3. What is the capital of Massaschusetts?</h3>
-      <input type = "radio" name = "q3" value="a" id="q3a">a. Springfield<br>
-      <input type = "radio" name = "q3" value="b" id="q3b">b. Boston<br>
-      <input type = "radio" name = "q3" value="c" id="q3c">c. Hartford<br>
-      <input type = "radio" name = "q3" value="d" id="q3d">d. Chicago<br>
-
-      <br><br>
+     
       <input type="submit" value="Submit Answers">
    </form>
       
@@ -101,3 +87,29 @@ class Quiz {
       //       return question.correct_answer
       //    })
       // }
+
+      // <input type = "radio" name = "q1" value="b" id="q1b">b. &lt;script&gt;<br>
+      //       <input type = "radio" name = "q1" value="c" id="q1c">c. &lt;script&gt;<br>
+      //       <input type = "radio" name = "q1" value="d" id="q1d">d. &lt;script&gt;<br></br>
+
+
+
+      // <h3>1. In which HTML element do we put in JavaScript code?</h3>
+      // <input type = "radio" name = "q1" value="a" id="q1a">a. &lt;js&gt;<br>
+      // <input type = "radio" name = "q1" value="b" id="q1b">b. &lt;script&gt;<br>
+      // <input type = "radio" name = "q1" value="c" id="q1c">c. &lt;script&gt;<br>
+      // <input type = "radio" name = "q1" value="d" id="q1d">d. &lt;script&gt;<br>
+
+      // <h3>2. 2 + 2 = ?</h3>
+      // <input type = "radio" name = "q2" value="a" id="q2a">a. 5<br>
+      // <input type = "radio" name = "q2" value="b" id="q2b">b. 1000<br>
+      // <input type = "radio" name = "q2" value="c" id="q2c">c. 75<br>
+      // <input type = "radio" name = "q2" value="d" id="q2d">d. 4<br>
+
+      // <h3>3. What is the capital of Massaschusetts?</h3>
+      // <input type = "radio" name = "q3" value="a" id="q3a">a. Springfield<br>
+      // <input type = "radio" name = "q3" value="b" id="q3b">b. Boston<br>
+      // <input type = "radio" name = "q3" value="c" id="q3c">c. Hartford<br>
+      // <input type = "radio" name = "q3" value="d" id="q3d">d. Chicago<br>
+
+      // <br><br>
