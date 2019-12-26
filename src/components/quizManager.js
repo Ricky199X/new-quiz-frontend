@@ -52,6 +52,7 @@ class QuizManager {
       this.container.innerHTML = this.currentQuiz.htmlWithLabel
    }
 
+   // renders static HTML once a quiz has been selected
    staticHTML() {
       return (`
       <body>

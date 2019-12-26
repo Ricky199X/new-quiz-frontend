@@ -38,8 +38,15 @@ class Quiz {
    quizTitle() {
       return (`
       <h1>${this.title}</h1>
+      <h2>${this.description}</h2>
       `)
    }
+
+   // quizDescription() {
+   //    return (`
+   //       <h2>${this.description}</h2>
+   //    `)
+   // }
 
    quizForm() {
       return (`
