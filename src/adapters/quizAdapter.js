@@ -1,3 +1,41 @@
+class QuizAdapter {
+
+   constructor() {
+      this.baseUrl = "http://localhost:3000/quizzes"
+   }
+
+   // quizzesByCategoryUrl(id) {
+   //    return `http://localhost:3000/categories/${id}/quizzes`
+   // }
+
+   fetchQuizByTitle(title) {
+      return fetch(this.baseUrl).then(response => {
+         return response.json();
+       }).then(data => {
+         // Work with JSON data here
+         const quizData = data.data
+         return quizData
+       }).then(quizData => {
+         const filteredQuizArray = quizData.filter(quizObj => quizObj.attributes.title === title)
+         return filteredQuizArray
+         // need to now map this single quiz object to a new instance of Quiz
+       }).then(filteredQuizArray => {
+          this.selectedQuiz = filteredQuizArray.map(function(quizObj) {
+             return new Quiz(quizObj)
+          })
+         //  console.log(this.selectedQuiz)
+          return this.selectedQuiz
+       }).catch(err => {
+        alert(err);
+       })
+   }
+
+
+
+}
+
+// -------- Junk Code ---------
+
 // const QuizAdapter = (function() {
 
 //    // singleton class variable 
@@ -73,39 +111,3 @@
 //    }
 
 // })()
-
-class QuizAdapter {
-
-   constructor() {
-      this.baseUrl = "http://localhost:3000/quizzes"
-   }
-
-   // quizzesByCategoryUrl(id) {
-   //    return `http://localhost:3000/categories/${id}/quizzes`
-   // }
-
-   fetchQuizByTitle(title) {
-      return fetch(this.baseUrl).then(response => {
-         return response.json();
-       }).then(data => {
-         // Work with JSON data here
-         const quizData = data.data
-         return quizData
-       }).then(quizData => {
-         const filteredQuizArray = quizData.filter(quizObj => quizObj.attributes.title === title)
-         return filteredQuizArray
-         // need to now map this single quiz object to a new instance of Quiz
-       }).then(filteredQuizArray => {
-          this.selectedQuiz = filteredQuizArray.map(function(quizObj) {
-             return new Quiz(quizObj)
-          })
-         //  console.log(this.selectedQuiz)
-          return this.selectedQuiz
-       }).catch(err => {
-        alert(err);
-       })
-   }
-
-
-
-}

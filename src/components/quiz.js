@@ -42,12 +42,6 @@ class Quiz {
       `)
    }
 
-   // quizDescription() {
-   //    return (`
-   //       <h2>${this.description}</h2>
-   //    `)
-   // }
-
    quizForm() {
       return (`
       <form name="quizForm " onsubmit="return submitAnswers()">   
@@ -75,12 +69,25 @@ class Quiz {
       
       `)
    }
-
-
-  
    
 
-      // // now we want to load the questions, set them to this.quizQuestions
+}
+
+
+   // ------ Junk Code --------
+
+   // static async retrieveAllQuizzes() {
+
+   //    try {
+   //       const quizObjects = await QuizAdapter.instance.getQuizzes()
+   //       return quizObjects.map(obj => new this(obj))
+   //    } catch(err) {
+   //       alert(`The request failed with ${err}`)
+   //       return null
+   //    }
+   // }
+
+        // // now we want to load the questions, set them to this.quizQuestions
       // loadQuestions() {
       //    this.currentQuizQuestions = this.currentQuiz.questions.map((question) => {
             
@@ -94,18 +101,3 @@ class Quiz {
       //       return question.correct_answer
       //    })
       // }
-   
-
-}
-
-
-   // static async retrieveAllQuizzes() {
-
-   //    try {
-   //       const quizObjects = await QuizAdapter.instance.getQuizzes()
-   //       return quizObjects.map(obj => new this(obj))
-   //    } catch(err) {
-   //       alert(`The request failed with ${err}`)
-   //       return null
-   //    }
-   // }

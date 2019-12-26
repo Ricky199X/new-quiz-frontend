@@ -44,9 +44,6 @@ class QuizManager {
       })
    }
 
-
-
-
    // function to render selected quiz to the page
    render() {
       this.container.innerHTML = this.currentQuiz.htmlWithLabel
@@ -66,8 +63,6 @@ class QuizManager {
             <div id='results'></div>
             <form name="quiz-form" id="quiz-form" >   
               
-
-      
             </form>
          </section>
       </div>
