@@ -14,7 +14,7 @@ class QuizManager {
       this.container = document.querySelector('#app-container')
       this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
       this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
-      this.quizBorder.addEventListener('click', this.startQuizHandler.bind(this))
+      this.container.addEventListener('click', this.startQuizHandler.bind(this))
    }
 
 
@@ -34,8 +34,10 @@ class QuizManager {
       })
    }
 
+   // start quiz button - need it to render the contents of the quiz once pressed
    startQuizHandler(event) {
-      this.
+      this.startPrompt = event.target.dataset
+      console.log(this.startPrompt)
    }
 
    // now we want to load the questions, set them to this.quizQuestions
