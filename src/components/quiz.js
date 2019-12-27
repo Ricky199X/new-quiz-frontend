@@ -1,12 +1,17 @@
 class Quiz {
    constructor(quizJSON) {
-      // console.log(quizJSON)
+      // console.log(JSON.parse(quizJSON.attributes.questions[0].content))
       this.id = quizJSON.id
       this.title = quizJSON.attributes.title
       this.description = quizJSON.attributes.description
-      this.questions = quizJSON.attributes.questions
+      // this.questions = quizJSON.attributes.questions
+
+      // console.log(quizJSON.attributes.questions)
+      this.questions = quizJSON.attributes.questions.map(question => ({...question, content: JSON.parse(question.content)}))
+
+
       // when you render the questions - make to parse JSON.questions.content
-      this.answers = quizJSON.attributes.questions.answers
+      // this.answers = JSON.parse(quizJSON.attributes.questions[0].content)
    }
 
    get htmlWithLabel() {
@@ -26,17 +31,18 @@ class Quiz {
       return `<li data-id="${this.id}">${this.title}</li>`
    }
 
-   // function to renders a quiz's questions
-   renderQuestions() {
-      console.log(this)
-      for(let i = 0; i < this.questions.length; i++) {
-         console.log(this.questions[0])
+   mapContent(array, name) {
+     return  array.map((possibleAnswer, i) => {
          return (`
-            <h3> ${i + 1}. ${this.questions[0].prompt}</h3>
-            <input type = 'radio' name = "q${i + 1}" value="a" id="q${i + 1}a">a. ${this.questions[0].content}<br>
-            
+            <input type = "radio" data-id="${i + 1}" name="q-${name}" id="q${i + 1}">${possibleAnswer}<br>
          `)
-      }
+      }).join('')
+   }
+
+   // function to renders a quiz's questions
+   // choices not currently rendering correctly: need to figure out how to make it array of strings to HTML
+   renderQuestions() {
+     
    }
 
 
@@ -48,13 +54,12 @@ class Quiz {
    }
 
    quizForm() {
-      return (`
-      <form name="quizForm " onsubmit="return submitAnswers()">   
-     
-      <input type="submit" value="Submit Answers">
-   </form>
-      
-      `)
+      return this.questions.map((question, i) => {
+         return (`
+            <h3> ${i + 1}. ${question.prompt}</h3> 
+            ${this.mapContent(question.content, i)} 
+         `)
+      }).join('') + `<input type="submit" value="Submit This Shit"></input>`
    }
    
 
@@ -62,6 +67,9 @@ class Quiz {
 
 
    // ------ Junk Code --------
+
+   // 
+
 
    // static async retrieveAllQuizzes() {
 

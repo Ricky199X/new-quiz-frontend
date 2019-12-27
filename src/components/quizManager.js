@@ -14,7 +14,7 @@ class QuizManager {
    }
 
    initQuizBindingAndEventListeners() {
-      this.header = document.querySelector('header')
+      this.header = document.querySelector('#quiz-header')
       this.form = document.querySelector('#quiz-form')
    }
 
@@ -54,7 +54,7 @@ class QuizManager {
       return (`
       <body>
       <div id='container'>
-         <header>
+         <header id="quiz-header">
          <div class="loader"></div>
             
          </header>
@@ -77,9 +77,10 @@ class QuizManager {
    }
    
    renderQuizInfo() {
+      console.log(this.header.innerHTML)
       this.header.innerHTML = this.currentQuiz.quizTitle()
+      console.log(this.header.innerHTML)
       this.form.innerHTML = this.currentQuiz.quizForm()
-      this.form.innerHTML = this.currentQuiz.renderQuestions()
    }
 
 
