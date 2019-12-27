@@ -28,11 +28,12 @@ class Quiz {
 
    // function to renders a quiz's questions
    renderQuestions() {
+      console.log(this)
       for(let i = 0; i < this.questions.length; i++) {
          console.log(this.questions[0])
          return (`
             <h3> ${i + 1}. ${this.questions[0].prompt}</h3>
-            <input type = 'radio' name = "q${this.questions[i + 1]}" value="a" id="q1a">a. <br>
+            <input type = 'radio' name = "q${i + 1}" value="a" id="q${i + 1}a">a. ${this.questions[0].content}<br>
             
          `)
       }
