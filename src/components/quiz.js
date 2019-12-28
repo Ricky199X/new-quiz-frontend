@@ -1,10 +1,11 @@
 class Quiz {
    constructor(quizJSON) {
-      console.log(quizJSON)
       this.id = quizJSON.id
       this.title = quizJSON.attributes.title
       this.description = quizJSON.attributes.description
       this.questions = quizJSON.attributes.questions.map(question => ({...question, content: JSON.parse(question.content)}))
+      this.answers = quizJSON.attributes.questions.map(question => question.correct_answer)
+      console.log(this.answers)
    }
 
    get htmlWithLabel() {

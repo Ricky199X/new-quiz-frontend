@@ -29,6 +29,7 @@ class QuizManager {
          // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
          this.currentQuiz = quiz[0]
+         // console.log(this.currentQuiz)
          this.renderQuizInfo()
       })
    }
@@ -80,6 +81,7 @@ class QuizManager {
       this.header.innerHTML = this.currentQuiz.quizTitle()
       this.form.innerHTML = this.currentQuiz.quizForm()
    }
+
 
 
 
