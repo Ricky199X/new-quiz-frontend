@@ -50,8 +50,18 @@ class Quiz {
       }).join('') + `<input type="submit" value="Submit This Shit"></input>`
    }
    
-   checkAnswers() {
+   checkAnswers(questionsObj) {
+      let userAnswer = '';
+      let numCorrect = 0;
       
+      // for each question...
+
+      for(let i = 0; i < questionsObj.length; i++) {
+
+         // find the selected answer
+         
+
+      }
    }
 
 }
