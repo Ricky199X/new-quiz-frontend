@@ -16,6 +16,7 @@ class QuizManager {
    initQuizBindingAndEventListeners() {
       this.header = document.querySelector('#quiz-header')
       this.form = document.querySelector('#quiz-form')
+      this.results = document.querySelector('#results')
    }
 
 

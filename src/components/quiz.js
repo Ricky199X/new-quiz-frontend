@@ -28,7 +28,7 @@ class Quiz {
    mapContent(array, name) {
      return  array.map((possibleAnswer, i) => {
          return (`
-            <input type = "radio" data-id="${i + 1}" name="q-${name}" id="q${1}choice${i + 1}">${possibleAnswer}<br>
+            <input type = "radio" data-id= ${i + 1} name="q-${name + 1}" id="q${name + 1}choice${name + 1}">${possibleAnswer}<br>
          `)
       }).join('')
    }
@@ -50,6 +50,9 @@ class Quiz {
       }).join('') + `<input type="submit" value="Submit This Shit"></input>`
    }
    
+   checkAnswers() {
+      
+   }
 
 }
 
