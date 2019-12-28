@@ -59,9 +59,17 @@ class Quiz {
       for(let i = 0; i < questionsObj.length; i++) {
 
          // find the selected answer
-         
+         // userAnswer = ....
 
+         if (userAnswer == questionsObj[i].correct_answer) {
+            numCorrect++
+         } else {
+            // if answer is wrong or blank
+            numCorrect += 0
+         }
+         
       }
+      return `You scored: ${numCorrect} out of ${questionsObj.length}!`
    }
 
 }
