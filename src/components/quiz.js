@@ -47,29 +47,30 @@ class Quiz {
             <h3> ${i + 1}. ${question.prompt}</h3> 
             ${this.mapContent(question.content, i)} 
          `)
-      }).join('') + `<input type="submit" value="Submit This Shit"></input>`
+      }).join('') + `<input type="submit" id="Submit" value="Submit Answers"></input>`
    }
    
-   checkAnswers(questionsObj) {
+   checkAnswers() {
       let userAnswer = '';
       let numCorrect = 0;
       
       // for each question...
 
-      for(let i = 0; i < questionsObj.length; i++) {
+      for(let i = 0; i < this.questions.length; i++) {
+         console.log(this.questions.length)
 
          // find the selected answer
          // userAnswer = ....
 
-         if (userAnswer == questionsObj[i].correct_answer) {
-            numCorrect++
-         } else {
-            // if answer is wrong or blank
-            numCorrect += 0
-         }
+         // if (userAnswer == this.questions[i].correct_answer) {
+         //    numCorrect++
+         // } else {
+         //    // if answer is wrong or blank
+         //    numCorrect += 0
+         // }
          
       }
-      return `You scored: ${numCorrect} out of ${questionsObj.length}!`
+      return `You scored: ${numCorrect} out of ${this.questions.length}!`
    }
 
 }

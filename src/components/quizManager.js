@@ -32,17 +32,16 @@ class QuizManager {
          this.currentQuiz = quiz[0]
          // console.log(this.currentQuiz)
          this.renderQuizInfo()
+         this.renderResults()
       })
    }
 
-   // start quiz button - need it to render the contents of the quiz once we click 
-   startQuizHandler() {
-      this.startButton = document.querySelector('button')
-      this.startButton.addEventListener('click', event => {
-         console.log('you have clicked the start button - cool!')
-         // at this point, we want to:
-         // 1. start the 2 minute timer
-         // 2. render the quiz 
+   // 
+   submitQuizHandler() {
+      this.submitButton = document.querySelector('input#Submit')
+      this.submitButton.addEventListener('click', event => {
+         checkAnswers()
+
       })
    }
 
@@ -81,6 +80,10 @@ class QuizManager {
    renderQuizInfo() {
       this.header.innerHTML = this.currentQuiz.quizTitle()
       this.form.innerHTML = this.currentQuiz.quizForm()
+   }
+
+   renderResults() {
+      this.results.innerHTML = this.currentQuiz.checkAnswers()
    }
 
 
