@@ -7,6 +7,7 @@ class QuizManager {
       this.initQuizBindingAndEventListeners()
       // this.initResultBindingAndEventListeners()
       this.selectedQuiz = null
+      this.userSubmittedAnswers = []
    }
 
    initBindingAndEventListeners() {
@@ -48,10 +49,15 @@ class QuizManager {
    }
 
    // 
-   submitQuizHandler(evnt) {
-      // preventDefault()
+   submitQuizHandler(event) {
+      event.preventDefault()
       console.log('hello')
-      // this.results = event.target.innerText
+      console.log(this)
+      // get the user's submitted answers
+      this.getUserAnswers()
+      // assign those answers to this.userSubmittedAnswers
+
+      // then run checkAnswers, which accepts the user's submitted answers 
       this.checkAnswers()
    }
 
