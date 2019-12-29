@@ -4,6 +4,8 @@ class QuizManager {
       this.currentQuiz = null
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
+      this.initQuizBindingAndEventListeners()
+      // this.initResultBindingAndEventListeners()
       this.selectedQuiz = null
    }
 
@@ -16,7 +18,15 @@ class QuizManager {
    initQuizBindingAndEventListeners() {
       this.header = document.querySelector('#quiz-header')
       this.form = document.querySelector('#quiz-form')
+   }
+
+   initResultBindingAndEventListeners() {
+      this.container = document.querySelector('#app-container')
+      this.form = document.querySelector('#quiz-form')
       this.results = document.querySelector('#results')
+      this.submitButton = document.querySelector('input#Submit')
+      console.log(this.submitButton)
+      this.submitButton.addEventListener('click', this.submitQuizHandler.bind(this))
    }
 
 
@@ -32,17 +42,17 @@ class QuizManager {
          this.currentQuiz = quiz[0]
          // console.log(this.currentQuiz)
          this.renderQuizInfo()
-         this.renderResults()
+      }).then(() => {
+         this.initResultBindingAndEventListeners()
       })
    }
 
    // 
-   submitQuizHandler() {
-      this.submitButton = document.querySelector('input#Submit')
-      this.submitButton.addEventListener('click', event => {
-         checkAnswers()
-
-      })
+   submitQuizHandler(evnt) {
+      // preventDefault()
+      console.log('hello')
+      // this.results = event.target.innerText
+      this.checkAnswers()
    }
 
    // function to render selected quiz to the page
@@ -83,7 +93,8 @@ class QuizManager {
    }
 
    renderResults() {
-      this.results.innerHTML = this.currentQuiz.checkAnswers()
+      this.questionsObj = this.questions
+      this.results.innerHTML = this.currentQuiz.checkAnswers(this.questionsObj)
    }
 
 

@@ -5,7 +5,7 @@ class Quiz {
       this.description = quizJSON.attributes.description
       this.questions = quizJSON.attributes.questions.map(question => ({...question, content: JSON.parse(question.content)}))
       this.answers = quizJSON.attributes.questions.map(question => question.correct_answer)
-      console.log(this.answers)
+      // console.log(this.answers)
    }
 
    get htmlWithLabel() {
@@ -47,17 +47,17 @@ class Quiz {
             <h3> ${i + 1}. ${question.prompt}</h3> 
             ${this.mapContent(question.content, i)} 
          `)
-      }).join('') + `<input type="submit" id="Submit" value="Submit Answers"></input>`
+      }).join('') + `<input type="submit" id="Submit" value="Submit Answers" onclick="checkAnswer()"></input>`
    }
    
-   checkAnswers() {
+   checkAnswers(obj) {
       let userAnswer = '';
       let numCorrect = 0;
       
       // for each question...
 
-      for(let i = 0; i < this.questions.length; i++) {
-         console.log(this.questions.length)
+      for(let i = 0; i < this.obj.length; i++) {
+         console.log(this.obj.length)
 
          // find the selected answer
          // userAnswer = ....
@@ -70,7 +70,7 @@ class Quiz {
          // }
          
       }
-      return `You scored: ${numCorrect} out of ${this.questions.length}!`
+      return `You scored: ${numCorrect} out of ${obj.length}!`
    }
 
 }
