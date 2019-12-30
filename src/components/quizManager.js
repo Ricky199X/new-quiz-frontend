@@ -27,7 +27,7 @@ class QuizManager {
       this.results = document.querySelector('#results')
       this.userAnswers = document.getElementById('after_submit')
       this.submitButton = document.querySelector('input#Submit')
-      this.submitButton.addEventListener('click', this.submitQuizHandler.bind(this))
+      this.form.addEventListener('submit', this.submitQuizHandler.bind(this))
    }
 
 
@@ -51,11 +51,28 @@ class QuizManager {
    // 
    submitQuizHandler(event) {
       event.preventDefault()
-      console.log('hello')
-      // mainipulate the DOM to include the users inputted answers in the after-submit div
 
-      
+      // this node list of all inputs in the form 
+      const test = event.target.querySelectorAll('input')
+   
+
+      // array of all inputs in the form 
+      var arr = Array.from(test)
+
+      // array of all selected inputs in the form
+      var filteredArr = arr.filter((input) => input.checked)
+      console.log(filteredArr)
+
+      // now need to get the data-id of each value in the filtered Array of selected inputs, map those to a new array
+
+
+
+      // get inputs, filter the clicked selections
       // assign those answers to this.userSubmittedAnswers
+
+      // map with index, compare the .dataset.data-id input number to the correct answer
+      // return element.dataset.id == this.cquestions[i].correct_answer
+      // will reutrn true and false 
 
       // then run checkAnswers, which accepts the user's submitted answers 
       // this.checkAnswers()

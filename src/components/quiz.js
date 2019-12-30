@@ -28,7 +28,7 @@ class Quiz {
    mapContent(array, name) {
      return  array.map((possibleAnswer, i) => {
          return (`
-            <input type = "radio" data-id= ${i + 1} name="q-${name + 1}" id="q${name + 1}choice${i + 1}">${possibleAnswer}<br>
+            <input type = "radio" data-id= ${i + 1} name="q-${name + 1}" id="q${name + 1}choice${i + 1}" required>${possibleAnswer}<br>
          `)
       }).join('')
    }
@@ -62,7 +62,7 @@ class Quiz {
             <h3> ${i + 1}. ${question.prompt}</h3> 
             ${this.mapContent(question.content, i)} 
          `)
-      }).join('') + `<input type="submit" id="Submit" value="Submit Answers" onlick="submitUserAnswers()"></input>`
+      }).join('') + `<input type="submit" id="Submit" value="Submit Answers"></input>`
    }
    
    checkAnswers(obj) {
