@@ -33,7 +33,18 @@ class Quiz {
       }).join('')
    }
 
-   getUserAnswers() {
+   submitUserAnswers() {
+      console.log('logged from get user answers')
+      let inputsArray = Array.from(document.querySelectorAll('input'))
+      
+      for (let i = 0; i < inputsArray.length; i++) {
+         if (inputsArray[i].type = "radio") {
+             if(inputsArray[i].checked) {
+                 document.getElementById("after_submit").innerHTML
+                 += inputsArray[i].dataset.id + "</br>"
+             }
+         }
+     }
       
    }
 
@@ -51,7 +62,7 @@ class Quiz {
             <h3> ${i + 1}. ${question.prompt}</h3> 
             ${this.mapContent(question.content, i)} 
          `)
-      }).join('') + `<input type="submit" id="Submit" value="Submit Answers" onlick="checkAnswers()"></input>`
+      }).join('') + `<input type="submit" id="Submit" value="Submit Answers" onlick="submitUserAnswers()"></input>`
    }
    
    checkAnswers(obj) {

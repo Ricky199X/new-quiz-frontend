@@ -7,12 +7,12 @@ class QuizManager {
       this.initQuizBindingAndEventListeners()
       // this.initResultBindingAndEventListeners()
       this.selectedQuiz = null
-      this.userSubmittedAnswers = []
    }
 
    initBindingAndEventListeners() {
       this.container = document.querySelector('#app-container')
       this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
+      this.userSubmittedAnswers = document.getElementById('after_submit')
       this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
    }
 
@@ -25,8 +25,8 @@ class QuizManager {
       this.container = document.querySelector('#app-container')
       this.form = document.querySelector('#quiz-form')
       this.results = document.querySelector('#results')
+      this.userAnswers = document.getElementById('after_submit')
       this.submitButton = document.querySelector('input#Submit')
-      console.log(this.submitButton)
       this.submitButton.addEventListener('click', this.submitQuizHandler.bind(this))
    }
 
@@ -52,13 +52,13 @@ class QuizManager {
    submitQuizHandler(event) {
       event.preventDefault()
       console.log('hello')
-      console.log(this)
-      // get the user's submitted answers
-      this.getUserAnswers()
+      // mainipulate the DOM to include the users inputted answers in the after-submit div
+
+      
       // assign those answers to this.userSubmittedAnswers
 
       // then run checkAnswers, which accepts the user's submitted answers 
-      this.checkAnswers()
+      // this.checkAnswers()
    }
 
    // function to render selected quiz to the page
@@ -82,6 +82,9 @@ class QuizManager {
               
             </form>
          </section>
+
+         <div id="after_submit">
+         </div>
       </div>
    
    </body>
