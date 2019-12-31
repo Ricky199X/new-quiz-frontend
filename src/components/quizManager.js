@@ -61,9 +61,14 @@ class QuizManager {
 
       // array of all selected inputs in the form
       var filteredArr = arr.filter((input) => input.checked)
-      console.log(filteredArr)
+      // console.log(filteredArr)
 
       // now need to get the data-id of each value in the filtered Array of selected inputs, map those to a new array
+      this.userAnswers = filteredArr.map((input) => {
+         return parseInt(input.dataset.id)
+      })
+
+      console.log(this.userAnswers)
 
 
 
