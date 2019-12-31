@@ -6,6 +6,7 @@ class Quiz {
       this.questions = quizJSON.attributes.questions.map(question => ({...question, content: JSON.parse(question.content)}))
       this.answers = quizJSON.attributes.questions.map(question => question.correct_answer)
       // console.log(this.answers)
+      this.userAnswers = []
    }
 
    get htmlWithLabel() {
@@ -33,19 +34,23 @@ class Quiz {
       }).join('')
    }
 
-   submitUserAnswers() {
-      console.log('logged from get user answers')
-      let inputsArray = Array.from(document.querySelectorAll('input'))
-      
-      for (let i = 0; i < inputsArray.length; i++) {
-         if (inputsArray[i].type = "radio") {
-             if(inputsArray[i].checked) {
-                 document.getElementById("after_submit").innerHTML
-                 += inputsArray[i].dataset.id + "</br>"
-             }
-         }
-     }
-      
+   collectUserAnswers(test) {
+      // array of all inputs in the form 
+      var arr = Array.from(test)
+
+      // array of all selected inputs in the form
+      // get inputs, filter the clicked selections
+
+      var filteredArr = arr.filter((input) => input.checked)
+      // console.log(filteredArr)
+
+      // now need to get the data-id of each value in the filtered Array of selected inputs, map those to a new array
+      // assign those answers to this.userSubmittedAnswers
+
+      this.userAnswers = filteredArr.map((input) => {
+         return parseInt(input.dataset.id)
+      })
+      return this.userAnswers
    }
 
 

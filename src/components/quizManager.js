@@ -7,12 +7,13 @@ class QuizManager {
       this.initQuizBindingAndEventListeners()
       // this.initResultBindingAndEventListeners()
       this.selectedQuiz = null
+      // this.userAnswers = []
    }
 
    initBindingAndEventListeners() {
       this.container = document.querySelector('#app-container')
       this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
-      this.userSubmittedAnswers = document.getElementById('after_submit')
+      // this.userSubmittedAnswers = document.getElementById('after_submit')
       this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
    }
 
@@ -25,7 +26,6 @@ class QuizManager {
       this.container = document.querySelector('#app-container')
       this.form = document.querySelector('#quiz-form')
       this.results = document.querySelector('#results')
-      this.userAnswers = document.getElementById('after_submit')
       this.submitButton = document.querySelector('input#Submit')
       this.form.addEventListener('submit', this.submitQuizHandler.bind(this))
    }
@@ -52,35 +52,20 @@ class QuizManager {
    submitQuizHandler(event) {
       event.preventDefault()
 
-      // this node list of all inputs in the form 
+      // this gets a node list of all inputs in the form 
       const test = event.target.querySelectorAll('input')
-   
+      // this calls collect user answers to get user's answers
+      this.currentQuiz.collectUserAnswers(test)
 
-      // array of all inputs in the form 
-      var arr = Array.from(test)
+      // this calls check answers to compare the user answers array to the correct answers array
+      console.log(this.currentQuiz.userAnswers)
 
-      // array of all selected inputs in the form
-      var filteredArr = arr.filter((input) => input.checked)
-      // console.log(filteredArr)
-
-      // now need to get the data-id of each value in the filtered Array of selected inputs, map those to a new array
-      this.userAnswers = filteredArr.map((input) => {
-         return parseInt(input.dataset.id)
-      })
-
-      console.log(this.userAnswers)
-
-
-
-      // get inputs, filter the clicked selections
-      // assign those answers to this.userSubmittedAnswers
+      
+      
 
       // map with index, compare the .dataset.data-id input number to the correct answer
       // return element.dataset.id == this.cquestions[i].correct_answer
       // will reutrn true and false 
-
-      // then run checkAnswers, which accepts the user's submitted answers 
-      // this.checkAnswers()
    }
 
    // function to render selected quiz to the page
