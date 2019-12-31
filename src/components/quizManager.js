@@ -58,7 +58,10 @@ class QuizManager {
       this.currentQuiz.collectUserAnswers(test)
 
       // this calls check answers to compare the user answers array to the correct answers array
-      console.log(this.currentQuiz.userAnswers)
+      // console.log(this.currentQuiz.userAnswers)
+      let userAnswerArray = this.currentQuiz.userAnswers
+
+      this.currentQuiz.checkAnswers(userAnswerArray)
 
       
       

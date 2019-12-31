@@ -73,24 +73,26 @@ class Quiz {
    checkAnswers(obj) {
       let userAnswer = '';
       let numCorrect = 0;
+
+      console.log('hello!')
       
       // for each question...
 
-      for(let i = 0; i < this.obj.length; i++) {
-         console.log(this.obj.length)
+      // for(let i = 0; i < this.obj.length; i++) {
+      //    console.log(this.obj.length)
 
-         // find the selected answer
-         // userAnswer = ....
+      //    // find the selected answer
+      //    // userAnswer = ....
 
-         // if (userAnswer == this.questions[i].correct_answer) {
-         //    numCorrect++
-         // } else {
-         //    // if answer is wrong or blank
-         //    numCorrect += 0
-         // }
+      //    // if (userAnswer == this.questions[i].correct_answer) {
+      //    //    numCorrect++
+      //    // } else {
+      //    //    // if answer is wrong or blank
+      //    //    numCorrect += 0
+      //    // }
          
-      }
-      return `You scored: ${numCorrect} out of ${obj.length}!`
+      // }
+      // return `You scored: ${numCorrect} out of ${obj.length}!`
    }
 
 }
