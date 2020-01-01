@@ -96,6 +96,12 @@ class QuizManager {
       `)
    }
 
+   renderHomeButton() {
+      return (`
+         <input type="submit" id="back-button" value="Back to Home"></input>
+      `)
+   }
+
    renderStaticHTML() {
       this.container.innerHTML = this.staticHTML()
    }
