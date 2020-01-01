@@ -2,6 +2,27 @@ body {
    background: rgb(217, 238, 237);
 }
 
+ul {
+   font-family: 'Helvetica Neue';
+}
+
+h1 {
+   font-family: 'Helvetica Neue';
+   font-style: oblique;
+}
+
+h2 {
+   font-family: 'Helvetica Neue';
+}
+
+h3 {
+   font-family: 'Helvetica Neue';
+}
+
+.inputs {
+   font-family: 'Helvetica Neue';
+}
+
 #quiz-div {
    display: grid;
    grid-template-columns: 1fr;

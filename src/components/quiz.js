@@ -30,7 +30,7 @@ class Quiz {
    mapContent(array, name) {
      return  array.map((possibleAnswer, i) => {
          return (`
-            <input type = "radio" data-id= ${i + 1} name="q-${name + 1}" id="q${name + 1}choice${i + 1}" required>${possibleAnswer}<br>
+            <input class = "inputs" type = "radio" data-id= ${i + 1} name="q-${name + 1}" id="q${name + 1}choice${i + 1}" required>${possibleAnswer}<br>
          `)
       }).join('')
    }
