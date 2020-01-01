@@ -65,13 +65,6 @@ class QuizManager {
       console.log(this.currentQuiz.answers)
 
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
-
-      
-      
-
-      // map with index, compare the .dataset.data-id input number to the correct answer
-      // return element.dataset.id == this.cquestions[i].correct_answer
-      // will reutrn true and false 
    }
 
    // function to render selected quiz to the page

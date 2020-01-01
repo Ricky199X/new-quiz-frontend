@@ -8,6 +8,7 @@ class Quiz {
       // console.log(this.answers)
       this.userAnswers = []
       this.matches = []
+      this.userFinalScore = 0
    }
 
    get htmlWithLabel() {
@@ -71,8 +72,17 @@ class Quiz {
       }).join('') + `<input type="submit" id="Submit" value="Submit Answers"></input>`
    }
    
-   checkAnswers(userObj, correctAnswers) {
-      
+   checkAnswers(userArr, correctAnswers) {
+      // this maps thru the userAnswers, compares each answer to the correct answer. 
+      // returns an array of 1's (anything that evaluates to true) and 0's (anything that evaluates to false)
+      var result = userArr.map(function(userAnswer, i) {
+         return + (userAnswer == correctAnswers[i])
+      })
+
+      // now we reduce the result array, we need to get the perecentage for the final score. 
+      var finalPercentage = result.reduce((acc, curr) => acc + curr) / correctAnswers.length * 100
+      this.userFinalScore = Number(finalPercentage.toFixed(2))
+      console.log(this.userFinalScore)
    }
 
 }
