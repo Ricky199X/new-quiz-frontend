@@ -63,6 +63,7 @@ class QuizManager {
       // this passes the two arrays for
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
       this.renderScore()
+      this.renderHomeButton()
    }
 
    // function to render selected quiz to the page
@@ -97,9 +98,9 @@ class QuizManager {
    }
 
    renderHomeButton() {
-      return (`
-         <input type="submit" id="back-button" value="Back to Home"></input>
-      `)
+      let homeButton = document.createElement('div')
+      homeButton.innerHTML = '<input type="submit" id="back-button" value="Back to Home"></input>'
+      this.container.appendChild(homeButton)
    }
 
    renderStaticHTML() {
@@ -114,6 +115,7 @@ class QuizManager {
    renderScore() {
       // this.questionsObj = this.questions
       this.container.innerHTML = this.currentQuiz.renderScore()
+      // this.container.addElement('input')
    }
 
 
