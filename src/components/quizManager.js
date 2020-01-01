@@ -7,13 +7,11 @@ class QuizManager {
       this.initQuizBindingAndEventListeners()
       // this.initResultBindingAndEventListeners()
       this.selectedQuiz = null
-      // this.userAnswers = []
    }
 
    initBindingAndEventListeners() {
       this.container = document.querySelector('#app-container')
       this.categoryQuizzesContainer = document.querySelector('#selected-category-quizzes')
-      // this.userSubmittedAnswers = document.getElementById('after_submit')
       this.categoryQuizzesContainer.addEventListener('click', this.selectQuizHandler.bind(this))
    }
 
@@ -62,7 +60,9 @@ class QuizManager {
       let userAnswerArray = this.currentQuiz.userAnswers
       let correctAnswers = this.currentQuiz.answers
 
+      // this passes the two arrays for
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
+      console.log(this)
    }
 
    // function to render selected quiz to the page
@@ -106,8 +106,8 @@ class QuizManager {
    }
 
    renderResults() {
-      this.questionsObj = this.questions
-      this.results.innerHTML = this.currentQuiz.checkAnswers(this.questionsObj)
+      // this.questionsObj = this.questions
+      // this.results.innerHTML = this.currentQuiz.checkAnswers(this.questionsObj)
    }
 
 

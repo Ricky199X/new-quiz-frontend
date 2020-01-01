@@ -7,8 +7,8 @@ class Quiz {
       this.answers = quizJSON.attributes.questions.map(question => question.correct_answer)
       // console.log(this.answers)
       this.userAnswers = []
-      this.matches = []
       this.userFinalScore = 0
+      this.resultsMessage - ''
    }
 
    get htmlWithLabel() {
@@ -84,9 +84,9 @@ class Quiz {
       this.userFinalScore = Number(finalPercentage.toFixed(2))
       
       if (this.userFinalScore < 66) {
-         return `Too bad! You only scored ${this.userFinalScore}%. Better luck next time! :/ `
+         this.resultsMessage = `Too bad! You only scored ${this.userFinalScore}%. Better luck next time! :/ `
       } else {
-         return `Good job, trivia master!! You scored ${this.userFinalScore}%!`
+         this.resultsMessage = `Good job, trivia master!! You scored ${this.userFinalScore}%!`
       }
    }
 
