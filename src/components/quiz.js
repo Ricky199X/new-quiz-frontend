@@ -90,6 +90,10 @@ class Quiz {
       }
    }
 
+   renderScore() {
+      return `${this.resultsMessage}`
+   }
+
 }
 
 

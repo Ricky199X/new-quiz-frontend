@@ -62,7 +62,7 @@ class QuizManager {
 
       // this passes the two arrays for
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
-      console.log(this)
+      this.renderScore()
    }
 
    // function to render selected quiz to the page
@@ -105,9 +105,9 @@ class QuizManager {
       this.form.innerHTML = this.currentQuiz.quizForm()
    }
 
-   renderResults() {
+   renderScore() {
       // this.questionsObj = this.questions
-      // this.results.innerHTML = this.currentQuiz.checkAnswers(this.questionsObj)
+      this.container.innerHTML = this.currentQuiz.renderScore()
    }
 
 
