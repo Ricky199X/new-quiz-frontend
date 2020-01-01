@@ -59,7 +59,6 @@ class CategorySelector {
          this.categories = categoryInfo.map(function(categoryObject) {
             return new Category(categoryObject)
          })
-         // console.log(this.categories)
       }).then(() => {
          this.render()
       }) 

@@ -5,7 +5,6 @@ class QuizManager {
       this.adapter = new QuizAdapter()
       this.initBindingAndEventListeners()
       this.initQuizBindingAndEventListeners()
-      // this.initResultBindingAndEventListeners()
       this.selectedQuiz = null
    }
 
@@ -39,7 +38,6 @@ class QuizManager {
          // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
          this.currentQuiz = quiz[0]
-         // console.log(this.currentQuiz)
          this.renderQuizInfo()
       }).then(() => {
          this.initResultBindingAndEventListeners()
@@ -56,7 +54,6 @@ class QuizManager {
       this.currentQuiz.collectUserAnswers(test)
 
       // this calls check answers to compare the user answers array to the correct answers array
-      // console.log(this.currentQuiz.userAnswers)
       let userAnswerArray = this.currentQuiz.userAnswers
       let correctAnswers = this.currentQuiz.answers
 
@@ -87,9 +84,6 @@ class QuizManager {
               
             </form>
          </section>
-
-         <div id="after_submit">
-         </div>
       </div>
    
    </body>
@@ -97,11 +91,7 @@ class QuizManager {
       `)
    }
 
-   renderHomeButton() {
-      let homeButton = document.createElement('div')
-      homeButton.innerHTML = '<input type="submit" id="back-button" value="Back to Home"></input>'
-      this.container.appendChild(homeButton)
-   }
+   
 
    renderStaticHTML() {
       this.container.innerHTML = this.staticHTML()
@@ -113,11 +103,15 @@ class QuizManager {
    }
 
    renderScore() {
-      // this.questionsObj = this.questions
       this.container.innerHTML = this.currentQuiz.renderScore()
-      // this.container.addElement('input')
    }
 
+   renderHomeButton() {
+      let homeButton = document.createElement('div')
+      homeButton.innerHTML = '<input type="submit" id="back-button" value="Back to Home"></input>'
+      this.container.appendChild(homeButton)
+      console.log(this)
+   }
 
 
 
