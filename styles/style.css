@@ -13,6 +13,7 @@ h1 {
 
 h2 {
    font-family: 'Helvetica Neue';
+   font-style: unset;
 }
 
 h3 {
@@ -20,6 +21,10 @@ h3 {
 }
 
 .inputs {
+   font-family: 'Helvetica Neue';
+}
+
+#text {
    font-family: 'Helvetica Neue';
 }
 

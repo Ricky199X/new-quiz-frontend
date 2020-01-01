@@ -80,14 +80,16 @@ class Quiz {
       this.userFinalScore = Number(finalPercentage.toFixed(2))
       
       if (this.userFinalScore < 66) {
-         this.resultsMessage = `Too bad! You only scored ${this.userFinalScore}%. Better luck next time! :/ `
+         this.resultsMessage = `Too bad! You only scored ${this.userFinalScore}%. Better luck next time! -_- `
       } else {
          this.resultsMessage = `Good job, trivia master!! You scored ${this.userFinalScore}%!`
       }
    }
 
    renderScore() {
-      return `${this.resultsMessage}`
+      return (`
+         <h2>${this.resultsMessage}</h2>
+      `)
    }
 
 }
