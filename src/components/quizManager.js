@@ -60,8 +60,11 @@ class QuizManager {
       // this calls check answers to compare the user answers array to the correct answers array
       // console.log(this.currentQuiz.userAnswers)
       let userAnswerArray = this.currentQuiz.userAnswers
+      console.log(this.currentQuiz.userAnswers)
+      let correctAnswers = this.currentQuiz.answers
+      console.log(this.currentQuiz.answers)
 
-      this.currentQuiz.checkAnswers(userAnswerArray)
+      this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
 
       
       

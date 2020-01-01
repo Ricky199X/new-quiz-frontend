@@ -7,6 +7,7 @@ class Quiz {
       this.answers = quizJSON.attributes.questions.map(question => question.correct_answer)
       // console.log(this.answers)
       this.userAnswers = []
+      this.matches = []
    }
 
    get htmlWithLabel() {
@@ -70,29 +71,8 @@ class Quiz {
       }).join('') + `<input type="submit" id="Submit" value="Submit Answers"></input>`
    }
    
-   checkAnswers(obj) {
-      let userAnswer = '';
-      let numCorrect = 0;
-
-      console.log('hello!')
+   checkAnswers(userObj, correctAnswers) {
       
-      // for each question...
-
-      // for(let i = 0; i < this.obj.length; i++) {
-      //    console.log(this.obj.length)
-
-      //    // find the selected answer
-      //    // userAnswer = ....
-
-      //    // if (userAnswer == this.questions[i].correct_answer) {
-      //    //    numCorrect++
-      //    // } else {
-      //    //    // if answer is wrong or blank
-      //    //    numCorrect += 0
-      //    // }
-         
-      // }
-      // return `You scored: ${numCorrect} out of ${obj.length}!`
    }
 
 }
