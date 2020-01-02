@@ -27,6 +27,11 @@ class QuizManager {
       this.form.addEventListener('submit', this.submitQuizHandler.bind(this))
    }
 
+   initHomeButtonBindingAndEventListeners() {
+      this.container = document.querySelector('#app-container')
+      this.backButton = document.querySelector('input#back-button')
+      this.backButton.addEventListener('submit', CategorySelector.fetchAndLoadCategories())
+   }
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
@@ -61,6 +66,10 @@ class QuizManager {
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
       this.renderScore()
       this.renderHomeButton()
+   }
+
+   homePageEventHandler(event) {
+
    }
 
    // function to render selected quiz to the page
@@ -110,7 +119,7 @@ class QuizManager {
       let homeButton = document.createElement('div')
       homeButton.innerHTML = '<input type="submit" id="back-button" value="Back to Home"></input>'
       this.container.appendChild(homeButton)
-      console.log(this)
+      // console.log(this)
    }
 
 
