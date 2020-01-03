@@ -106,15 +106,19 @@ class QuizManager {
    }
 
    renderHomeButton() {
-      let homeButton = document.createElement('div')
-      homeButton.innerHTML = '<input type="submit" id="home-button" value="Back to Home"></input>'
-      this.container.appendChild(homeButton)
+      let homeButtonDiv = document.createElement('div')
+      homeButtonDiv.innerHTML = '<input type="submit" id="home-button" value="Back to Home"></input>'
+      this.container.appendChild(homeButtonDiv)
 
       // click home button, go back out to categories
-      homeButton.addEventListener('click', () => {
+      homeButtonDiv.addEventListener('click', () => {
          window.location.reload(true)
       })
    }
+
+   // renderLikeButton() {
+   //    let
+   // }
 
 
 
