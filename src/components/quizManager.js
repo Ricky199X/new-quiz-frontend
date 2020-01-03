@@ -59,6 +59,7 @@ class QuizManager {
       // this passes the two arrays for
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
       this.renderScore()
+      this.renderLikeButton()
       this.renderHomeButton()
    }
 
@@ -116,9 +117,11 @@ class QuizManager {
       })
    }
 
-   // renderLikeButton() {
-   //    let
-   // }
+   renderLikeButton() {
+      let upvoteButtonDiv =  document.createElement('div')
+      upvoteButtonDiv.innerHTML = '<div class="upvote">Please upvote this quiz! <span class="like-glyph">&#x2661;</span></div></br>'
+      this.container.appendChild(upvoteButtonDiv)
+   }
 
 
 
