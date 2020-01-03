@@ -27,11 +27,12 @@ class QuizManager {
       this.form.addEventListener('submit', this.submitQuizHandler.bind(this))
    }
 
-   initHomeButtonBindingAndEventListeners() {
-      this.container = document.querySelector('#app-container')
-      this.backButton = document.querySelector('input#back-button')
-      this.backButton.addEventListener('submit', CategorySelector.fetchAndLoadCategories())
-   }
+   // initHomeButtonBindingAndEventListeners() {
+   //    this.window = window
+   //    this.container = document.querySelector('#app-container')
+   //    this.homeButton = document.querySelector('input#home-button')
+   //    this.homeButton.addEventListener('click', window.location.reload())
+   // }
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
@@ -46,6 +47,8 @@ class QuizManager {
          this.renderQuizInfo()
       }).then(() => {
          this.initResultBindingAndEventListeners()
+      })
+      .then(() => {
       })
    }
 
@@ -68,9 +71,13 @@ class QuizManager {
       this.renderHomeButton()
    }
 
-   homePageEventHandler(event) {
+   // homePageEventHandler() {
+   //    this.refreshPage()
+   // }
 
-   }
+   // refreshPage() {
+   //    window.location.reload();
+   // }
 
    // function to render selected quiz to the page
    render() {
@@ -117,9 +124,13 @@ class QuizManager {
 
    renderHomeButton() {
       let homeButton = document.createElement('div')
-      homeButton.innerHTML = '<input type="submit" id="back-button" value="Back to Home"></input>'
+      homeButton.innerHTML = '<input type="submit" id="home-button" value="Back to Home"></input>'
       this.container.appendChild(homeButton)
-      // console.log(this)
+
+      // click home button, go back out to categories
+      homeButton.addEventListener('click', () => {
+         window.location.reload(true)
+      })
    }
 
 
