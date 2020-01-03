@@ -27,13 +27,6 @@ class QuizManager {
       this.form.addEventListener('submit', this.submitQuizHandler.bind(this))
    }
 
-   // initHomeButtonBindingAndEventListeners() {
-   //    this.window = window
-   //    this.container = document.querySelector('#app-container')
-   //    this.homeButton = document.querySelector('input#home-button')
-   //    this.homeButton.addEventListener('click', window.location.reload())
-   // }
-
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
       // this populates this.selectedQuiz with the selected Quizzes name
@@ -47,8 +40,6 @@ class QuizManager {
          this.renderQuizInfo()
       }).then(() => {
          this.initResultBindingAndEventListeners()
-      })
-      .then(() => {
       })
    }
 
@@ -70,14 +61,6 @@ class QuizManager {
       this.renderScore()
       this.renderHomeButton()
    }
-
-   // homePageEventHandler() {
-   //    this.refreshPage()
-   // }
-
-   // refreshPage() {
-   //    window.location.reload();
-   // }
 
    // function to render selected quiz to the page
    render() {
