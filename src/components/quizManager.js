@@ -124,8 +124,11 @@ class QuizManager {
       this.container.appendChild(upvoteButtonDiv)
 
       upvoteButtonDiv.addEventListener('click', () => {
-         alert('You clicked the like button!')
          this.currentQuiz.addUpvote()
+         const newUpvoteValue = this.currentQuiz.upvoteCount
+         const id = this.currentQuiz.id
+         // console.log(newUpvoteValue)
+         this.adapter.sendUpvote(newUpvoteValue,id)
          // this needs to be a patch request to the server and increase the upvotes 
 
          // method: patch instead of post patch is a string 

@@ -26,12 +26,12 @@ class QuizAdapter {
       })
    }
 
-   sendUpvote(value, id) {
+   sendUpvote(value,id) {
       const upvote = {
          body: value,
       }
 
-      return fetch(`${this.baseUrl}/id`, {
+      return fetch(`${this.baseUrl}/${id}`, {
          method: 'PATCH',
          headers: {
             'content-type': 'application/json',
