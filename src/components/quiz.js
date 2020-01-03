@@ -93,6 +93,12 @@ class Quiz {
       `)
    }
 
+   addUpvote() {
+      this.upvoteCount += 1
+      console.log(this.upvoteCount)
+      return this.upvoteCount
+   }
+
    
 
    

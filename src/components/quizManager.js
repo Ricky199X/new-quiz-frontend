@@ -125,7 +125,7 @@ class QuizManager {
 
       upvoteButtonDiv.addEventListener('click', () => {
          alert('You clicked the like button!')
-
+         this.currentQuiz.addUpvote()
          // this needs to be a patch request to the server and increase the upvotes 
 
          // method: patch instead of post patch is a string 

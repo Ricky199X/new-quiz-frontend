@@ -10,7 +10,6 @@ class QuizAdapter {
        }).then(data => {
          // Work with JSON data here
          const quizData = data.data
-         console.log(quizData)
          return quizData
        }).then(quizData => {
          const filteredQuizArray = quizData.filter(quizObj => quizObj.attributes.title === title)
