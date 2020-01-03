@@ -119,7 +119,7 @@ class QuizManager {
 
    renderLikeButton() {
       let upvoteButtonDiv =  document.createElement('div')
-      upvoteButtonDiv.innerHTML = '<div class="upvote">Please upvote this quiz! <span class="like-glyph">&#x2661;</span></div></br>'
+      upvoteButtonDiv.innerHTML = ('<div class="upvote">Did you like this quiz? Give us a <i class="material-icons">thumb_down</i> or <i class="material-icons">thumb_up</i> ! </div></br>')
       this.container.appendChild(upvoteButtonDiv)
    }
 

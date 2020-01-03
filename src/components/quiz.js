@@ -8,6 +8,19 @@ class Quiz {
       this.userAnswers = []
       this.userFinalScore = 0
       this.resultsMessage - ''
+
+      this.glyphStates = {
+         "♡": "♥",
+         "♥": "♡"
+      };
+
+      this.colorStates = {
+         "red" : "",
+         "": "red"
+      };
+
+      this.EMPTY_HEART = '♡'
+      this.FULL_HEART = '♥'
    }
 
    get htmlWithLabel() {
@@ -91,6 +104,12 @@ class Quiz {
          <h2>${this.resultsMessage}</h2>
       `)
    }
+
+   
+
+   
+
+   
 
 }
 
