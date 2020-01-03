@@ -10,6 +10,7 @@ class QuizAdapter {
        }).then(data => {
          // Work with JSON data here
          const quizData = data.data
+         console.log(quizData)
          return quizData
        }).then(quizData => {
          const filteredQuizArray = quizData.filter(quizObj => quizObj.attributes.title === title)
@@ -23,9 +24,23 @@ class QuizAdapter {
           return this.selectedQuiz
        }).catch(err => {
         alert(err);
-       })
+      })
    }
 
+   sendUpvote(value, id) {
+      const upvote = {
+         body: value,
+      }
 
+      return fetch(`${this.baseUrl}/id`, {
+         method: 'PATCH',
+         headers: {
+            'content-type': 'application/json',
+         },
+         body: JSON.stringify( { upvote }),
+      }).then(res => res.json())
+   }
+
+ 
 
 }

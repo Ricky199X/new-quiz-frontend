@@ -36,6 +36,7 @@ class QuizManager {
       this.adapter.fetchQuizByTitle(this.selectedQuizName).then((quiz) => {
          // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
+      console.log(quiz)
          this.currentQuiz = quiz[0]
          this.renderQuizInfo()
       }).then(() => {
@@ -56,11 +57,11 @@ class QuizManager {
       let userAnswerArray = this.currentQuiz.userAnswers
       let correctAnswers = this.currentQuiz.answers
 
-      // this passes the two arrays for
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
       this.renderScore()
       this.renderLikeButton()
       this.renderHomeButton()
+      console.log(this)
    }
 
    // function to render selected quiz to the page
@@ -119,10 +120,18 @@ class QuizManager {
 
    renderLikeButton() {
       let upvoteButtonDiv =  document.createElement('div')
-      upvoteButtonDiv.innerHTML = ('<div class="upvote">Did you like this quiz? Give us a <i class="material-icons">thumb_down</i> or <i class="material-icons">thumb_up</i> ! </div></br>')
+      upvoteButtonDiv.innerHTML = ('<div class="upvote">Did you like this quiz? Give us a <i class="material-icons">thumb_up</i> ! </div></br>')
       this.container.appendChild(upvoteButtonDiv)
-   }
 
+      upvoteButtonDiv.addEventListener('click', () => {
+         alert('You clicked the like button!')
+
+         // this needs to be a patch request to the server and increase the upvotes 
+
+         // method: patch instead of post patch is a string 
+      })
+
+   }
 
 
 

@@ -5,22 +5,10 @@ class Quiz {
       this.description = quizJSON.attributes.description
       this.questions = quizJSON.attributes.questions.map(question => ({...question, content: JSON.parse(question.content)}))
       this.answers = quizJSON.attributes.questions.map(question => question.correct_answer)
+      this.upvoteCount = quizJSON.attributes.upvote_count
       this.userAnswers = []
       this.userFinalScore = 0
       this.resultsMessage - ''
-
-      this.glyphStates = {
-         "♡": "♥",
-         "♥": "♡"
-      };
-
-      this.colorStates = {
-         "red" : "",
-         "": "red"
-      };
-
-      this.EMPTY_HEART = '♡'
-      this.FULL_HEART = '♥'
    }
 
    get htmlWithLabel() {
