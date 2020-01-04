@@ -1,54 +1,3 @@
-/* body {
-   background: rgb(217, 238, 237);
-}
-
-ul {
-   font-family: 'Helvetica Neue';
-   font-size:20px;
-}
-
-h1 {
-   font-family: 'Helvetica Neue';
-   font-style: oblique;
-}
-
-h2 {
-   font-family: 'Helvetica Neue';
-   font-style: unset;
-}
-
-h3 {
-   font-family: 'Helvetica Neue';
-}
-
-.inputs {
-   font-family: 'Helvetica Neue';
-}
-
-#text {
-   font-family: 'Helvetica Neue';
-}
-
-#quiz-div {
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: auto;
-   border: 10px solid rgb(223, 102, 102);
-   width: 700px;
-   height: 500px;
-   background: gray;
-   border-radius: 10px;
-
-}
-
-.category-border {
-   border: 4px solid black;
-   margin: 10px;
-   border-radius: 9px;
-   display: inline-grid; */
-
-/* } */
-
 .loader {
    border: 16px solid #f3f3f3; /* Light grey */
    border-top: 16px solid #FBBC05; /* Blue */
@@ -109,6 +58,8 @@ body {
    overflow:auto;
    padding:25px;
    cursor: pointer;
+   font-family: "Titillium Web";
+   font-weight: bold;
  }
 
  header {
@@ -132,7 +83,8 @@ input[type="submit"]{
 }
 
 .text {
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-family: "Titillium Web";
+   font-weight: bold;
 }
 
 header h1 {
@@ -150,13 +102,8 @@ header h1 {
   color: #292F33;
 }
 
-/* #results span{
-  color: #000;
-  font-weight: bold;
-} */
-
  
- main {
+ /* main {
    display: grid;
    grid-template-columns: 1fr;
    grid-template-rows: auto;
@@ -164,7 +111,7 @@ header h1 {
    padding-top: 10px;
    padding-bottom: 30px;
    cursor: pointer;
- }
+ } */
  
  div.card {
    background-color: #eeeeee;
@@ -177,13 +124,14 @@ header h1 {
  }
  
  p {
-   font-size: 1.5em;
+   font-size: 2.5em;
    color: whitesmoke;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-family: "Titillium Web";
+   font-weight: bold;
  }
  
  li {
-   font-size: 1.05em;
+   font-size: 1.25em;
    list-style: none;
    padding-right: 20px;
    font-family: "Titillium Web";
@@ -191,7 +139,7 @@ header h1 {
  }
  
  button {
-   font-size: 1.5em;
+   font-size: 1.25em;
    color: #fff;
    background-color: #292F33;
    border-radius: 8px;
