@@ -27,16 +27,21 @@ class QuizAdapter {
    }
 
    sendUpvote(value,id) {
-      const upvote = {
-         body: value,
-      }
+    console.log(value)
+    console.log(id)
+    console.log(this)
 
       return fetch(`${this.baseUrl}/${id}`, {
          method: 'PATCH',
          headers: {
-            'content-type': 'application/json',
+            'Content-Type': 'application/json',
+            "Accept": "application/json"
          },
-         body: JSON.stringify( { upvote }),
+         body: JSON.stringify({ 
+            title: this.selectedQuiz.title,
+            description: this.selectedQuiz.description,
+            upvote_count: value 
+         }),
       }).then(res => res.json())
    }
 
