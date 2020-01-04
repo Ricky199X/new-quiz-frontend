@@ -118,7 +118,7 @@ class QuizManager {
 
    renderLikeButton() {
       let upvoteButtonDiv =  document.createElement('div')
-      upvoteButtonDiv.innerHTML = ('<div class="upvote">Did you like this quiz? Give us a <i class="material-icons">thumb_up</i> ! </div></br>')
+      upvoteButtonDiv.innerHTML = ('<div class="upvote"><h3>Did you like this quiz? Give us a <i class="material-icons">thumb_up</i> !</h3> </div></br>')
       this.container.appendChild(upvoteButtonDiv)
 
       upvoteButtonDiv.addEventListener('click', () => {

@@ -127,6 +127,10 @@ input[type="submit"]{
   font-size: 20px;
 }
 
+.text {
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 header h1 {
   color: whitesmoke;
   padding: 0px;
@@ -145,13 +149,7 @@ header p {
  }
 
  h3 {
-  color: black;
-}
-
-#results h3 {
-  background:#f06226;
-  padding:10px;
-  margin:10px;
+  color: #292F33;
 }
 
 /* #results span{
@@ -181,13 +179,14 @@ header p {
  p {
    font-size: 1.5em;
    color: whitesmoke;
-   font-family: Helvetica;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
  
  li {
    font-size: 1.05em;
    list-style: none;
    padding-right: 20px;
+   font-family: 'Lucida Sans';
  }
  
  button {

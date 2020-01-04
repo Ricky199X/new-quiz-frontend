@@ -89,7 +89,7 @@ class Quiz {
 
    renderScore() {
       return (`
-         <h2>${this.resultsMessage}</h2>
+         <h3>${this.resultsMessage}</h3>
       `)
    }
 

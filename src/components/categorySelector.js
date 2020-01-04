@@ -23,7 +23,7 @@ class CategorySelector {
          const selection = this.categories.find(category => parseInt(category.id) === id)
 
          if (selection === this.selectedCategory) {
-            event.target.parentElement.style.background = "rgb(217, 238, 237)"
+            event.target.parentElement.style.background = "rgb(250, 250, 250)"
             this.selectedCategory = null
          } else if (this.selectedCategory !== null ){
             const categoryContainer = Array.from(this.allCategoriesContainer.children).find(container => {
