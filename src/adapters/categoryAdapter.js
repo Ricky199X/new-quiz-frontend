@@ -9,7 +9,6 @@ class CategoryAdapter {
       return fetch(this.baseUrl).then(resp => {
          return resp.json()
       }).then(data => {
-         // console.log(data)
          return data
       }).catch(err => {
          alert(err)
@@ -29,10 +28,8 @@ class CategoryAdapter {
          return data
       }).then(data => {
          this.selectedQuizzes = data.map(function(quizObj) {
-            // console.log(quizObj)
             return new Quiz(quizObj)
          })
-         // console.log(this)
          return this.selectedQuizzes
       }).catch(err => {
         alert(err);

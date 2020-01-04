@@ -36,7 +36,6 @@ class QuizManager {
       this.adapter.fetchQuizByTitle(this.selectedQuizName).then((quiz) => {
          // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
       // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
-      // console.log(quiz)
          this.currentQuiz = quiz[0]
          this.renderQuizInfo()
       }).then(() => {
@@ -61,7 +60,6 @@ class QuizManager {
       this.renderScore()
       this.renderLikeButton()
       this.renderHomeButton()
-      // console.log(this)
    }
 
    // function to render selected quiz to the page
@@ -127,7 +125,6 @@ class QuizManager {
          this.currentQuiz.addUpvote()
          const newUpvoteValue = this.currentQuiz.upvoteCount
          const id = this.currentQuiz.id
-         // console.log(newUpvoteValue)
          this.adapter.sendUpvote(newUpvoteValue,id)
          // this needs to be a patch request to the server and increase the upvotes 
 
