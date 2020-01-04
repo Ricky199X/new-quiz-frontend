@@ -66,7 +66,7 @@ class Quiz {
             <h3> ${i + 1}. ${question.prompt}</h3> 
             ${this.mapContent(question.content, i)} 
          `)
-      }).join('') + `<input type="submit" id="Submit" value="Submit Answers"></input>`
+      }).join('') + `<br><input type="submit" id="Submit" value="Submit Answers"></input></br>`
    }
    
    checkAnswers(userArr, correctAnswers) {
