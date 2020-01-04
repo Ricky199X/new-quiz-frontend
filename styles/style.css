@@ -79,6 +79,7 @@ h3 {
    word-wrap: normal;
    white-space: nowrap;
    direction: ltr;
+   cursor: pointer;
  
    /* Support for all WebKit browsers. */
    -webkit-font-smoothing: antialiased;
@@ -98,6 +99,7 @@ body {
    font-family: "Titillium Web";
    font-weight: bold;
    background: #FFFFFF;
+   cursor: pointer;
  }
 
  #container{
@@ -106,6 +108,7 @@ body {
    margin:20px auto;
    overflow:auto;
    padding:25px;
+   cursor: pointer;
  }
 
  header {
@@ -160,6 +163,7 @@ header h1 {
    grid-gap: 20px;
    padding-top: 10px;
    padding-bottom: 30px;
+   cursor: pointer;
  }
  
  div.card {
@@ -169,6 +173,7 @@ header h1 {
    box-shadow: 10px 10px grey;
    padding: 10px;
    border-radius: 10px;
+   cursor: pointer;
  }
  
  p {
@@ -186,10 +191,11 @@ header h1 {
  }
  
  button {
-   font-size: .65em;
+   font-size: 1.5em;
    color: #fff;
    background-color: #292F33;
-   border-radius: 6px;
+   border-radius: 8px;
+   cursor: pointer;
  }
 
  .category-border {
@@ -197,6 +203,7 @@ header h1 {
    margin: 10px;
    border-radius: 10px;
    display: inline-grid;
+   cursor: pointer;
 }
 
 header[id="quiz-header"] {
