@@ -84,17 +84,19 @@ class Quiz {
       // now we reduce the result array, we need to get the perecentage for the final score. 
       var finalPercentage = result.reduce((acc, curr) => acc + curr) / correctAnswers.length * 100
       this.userFinalScore = Number(finalPercentage.toFixed(2))
-      
+   }
+
+   renderMessage() {
       if (this.userFinalScore < 66) {
          this.resultsMessage = `Too bad! You only scored ${this.userFinalScore}%. Better luck next time! -_- `
       } else {
          this.resultsMessage = `Good job, trivia master!! You scored ${this.userFinalScore}%!`
       }
-   }
 
-   renderScore() {
       return (`
-         <h3>${this.resultsMessage}</h3>
+         <h1> 
+            ${this.resultsMessage}
+         </h1>
       `)
    }
 

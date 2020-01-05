@@ -1,5 +1,4 @@
 class QuizManager {
-
    constructor() {
       this.currentQuiz = null
       this.adapter = new QuizAdapter()
@@ -46,7 +45,6 @@ class QuizManager {
    // 
    submitQuizHandler(event) {
       event.preventDefault()
-
       // this gets a node list of all inputs in the form 
       const test = event.target.querySelectorAll('input')
       // this calls collect user answers to get user's answers
@@ -90,8 +88,6 @@ class QuizManager {
       `)
    }
 
-   
-
    renderStaticHTML() {
       this.container.innerHTML = this.staticHTML()
    }
@@ -102,7 +98,7 @@ class QuizManager {
    }
 
    renderScore() {
-      this.container.innerHTML = this.currentQuiz.renderScore()
+      this.container.innerHTML = this.currentQuiz.renderMessage()
    }
 
    renderHomeButton() {
@@ -118,7 +114,7 @@ class QuizManager {
 
    renderLikeButton() {
       let upvoteButtonDiv =  document.createElement('div')
-      upvoteButtonDiv.innerHTML = ('<div class="upvote"><h3>Did you like this quiz? Give us a <i class="material-icons">thumb_up</i> !</h3> </div></br>')
+      upvoteButtonDiv.innerHTML = ('<div class="upvote"><h1>Did you like this quiz? Give us a <i class="material-icons">thumb_up</i> !</h1> </div></br>')
       this.container.appendChild(upvoteButtonDiv)
 
       upvoteButtonDiv.addEventListener('click', () => {
