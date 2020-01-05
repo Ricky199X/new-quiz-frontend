@@ -30,8 +30,8 @@ class CategorySelector {
                const button = container.querySelector('button.select-category')
                return button.dataset.id === this.selectedCategory.id
             })
-            categoryContainer.style.background = "rgb(217, 238, 237)"
-            event.target.parentElement.style.background = "white"
+            categoryContainer.style.background = "white"
+            event.target.parentElement.style.background = "rgb(250, 250, 250)"
             this.selectedCategory = selection
          } else {
             event.target.parentElement.style.background = 'white'
