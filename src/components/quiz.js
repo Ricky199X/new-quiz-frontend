@@ -25,7 +25,12 @@ class Quiz {
    }
 
    liHTML() {
-      return `<li data-id="${this.id}">${this.title} - Total Upvotes: ${this.upvoteCount}</li>`
+      return (`
+         <div>
+         <li data-id="${this.id}">${this.title}</li>
+            Total Upvotes: ${this.upvoteCount}
+         </div>
+      `)
    }
 
    mapContent(array, name) {

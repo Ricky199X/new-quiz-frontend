@@ -126,9 +126,13 @@ class QuizManager {
          const newUpvoteValue = this.currentQuiz.upvoteCount
          const id = this.currentQuiz.id
          this.adapter.sendUpvote(newUpvoteValue,id)
-         // this needs to be a patch request to the server and increase the upvotes 
+         
+         // thank you message
 
-         // method: patch instead of post patch is a string 
+         let messageDiv = document.createElement('div')
+         messageDiv.innerHTML = '<h3>Thank you for voting! Click "Back to Home" for more quizzes!</h3>'
+         this.container.appendChild(messageDiv)
+
       })
 
    }
