@@ -28,6 +28,7 @@ class QuizManager {
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
+      console.log(this.selectedQuizName)
       // this populates this.selectedQuiz with the selected Quizzes name
       // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
       this.renderStaticHTML()

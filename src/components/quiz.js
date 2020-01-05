@@ -28,7 +28,6 @@ class Quiz {
       return (`
          <div>
          <li data-id="${this.id}">${this.title}</li>
-            Total Upvotes: ${this.upvoteCount}
          </div>
       `)
    }
@@ -62,6 +61,7 @@ class Quiz {
       return (`
       <h1>${this.title}</h1>
       <h2>${this.description}</h2>
+      <h2>Total Upvotes: ${this.upvoteCount}</h2>
       `)
    }
 
