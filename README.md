@@ -12,8 +12,9 @@ This repository is the JavaScript frontend that interacts with a [Rails API](htt
 
 ## Installation
 
-1. Install the [Rails API](https://github.com/Ricky199X/trivia_app) and run `rails db:seed` in your terminal. 
-2. Open this repo's `index.html` in a web browser.
+1. Install the [Rails API](https://github.com/Ricky199X/trivia_app) and run `rails db:seed` in your terminal.
+2. Once the database has been seeded, run `rails s` to fire up the server.
+3. Open this repo's `index.html` in a web browser.
 
 ## Usage
 
