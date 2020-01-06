@@ -105,11 +105,5 @@ class Quiz {
       return this.upvoteCount
    }
 
-   
-
-   
-
-   
-
 }
 

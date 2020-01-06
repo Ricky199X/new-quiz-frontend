@@ -58,6 +58,7 @@ class QuizManager {
       this.currentQuiz.checkAnswers(userAnswerArray, correctAnswers)
       this.renderScore()
       this.renderLikeButton()
+      this.renderRetakeQuizButton()
       this.renderHomeButton()
    }
 
@@ -132,6 +133,15 @@ class QuizManager {
 
       })
 
+   }
+
+   renderRetakeQuizButton() {
+      console.log(this.currentQuiz)
+      if (this.currentQuiz.userFinalScore < 66) {
+         let retakeButtonDiv = document.createElement('div')
+         retakeButtonDiv.innerHTML = '<input type="submit" id="retake" value="Retake this quiz!"></input>'
+         this.container.appendChild(retakeButtonDiv)
+      }
    }
 
 
