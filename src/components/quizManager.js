@@ -28,7 +28,6 @@ class QuizManager {
 
    selectQuizHandler(event) {
       this.selectedQuizName = event.target.innerText
-      console.log(this.selectedQuizName)
       // this populates this.selectedQuiz with the selected Quizzes name
       // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
       this.renderStaticHTML()
@@ -126,7 +125,6 @@ class QuizManager {
          this.adapter.sendUpvote(newUpvoteValue,id)
          
          // thank you message
-
          let messageDiv = document.createElement('div')
          messageDiv.innerHTML = '<h3>Thank you for voting! Click "Back to Home" for more quizzes!</h3>'
          this.container.appendChild(messageDiv)
@@ -136,12 +134,29 @@ class QuizManager {
    }
 
    renderRetakeQuizButton() {
-      console.log(this.currentQuiz)
-      if (this.currentQuiz.userFinalScore < 66) {
-         let retakeButtonDiv = document.createElement('div')
-         retakeButtonDiv.innerHTML = '<input type="submit" id="retake" value="Retake this quiz!"></input>'
-         this.container.appendChild(retakeButtonDiv)
-      }
+      let retakeButtonDiv = document.createElement('div')
+      retakeButtonDiv.innerHTML = '<input type="submit" id="retake" value="Retake this quiz!"></input>'
+      this.container.appendChild(retakeButtonDiv)
+   
+
+      retakeButtonDiv.addEventListener('click', ()=> {
+         this.selectedQuizName = this.currentQuiz.title
+         // this populates this.selectedQuiz with the selected Quizzes name
+         // now want to make a catch to the fetchQuizByTitle function in my quizAdapter, passing it the quizName
+         this.renderStaticHTML()
+         this.initQuizBindingAndEventListeners()
+         this.adapter.fetchQuizByTitle(this.selectedQuizName).then((quiz) => {
+            // at THIS point, I've made a successful fetch call and have instantiated a quiz object in my quizAdapter
+         // the goal is to take that quiz object, and LOAD its contents, and be able to operate on it 
+            this.currentQuiz = quiz[0]
+            this.renderQuizInfo()
+         }).then(() => {
+            this.initResultBindingAndEventListeners()
+         })
+      })
+         
+      
+      
    }
 
 
