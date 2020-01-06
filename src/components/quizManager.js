@@ -126,7 +126,7 @@ class QuizManager {
          
          // thank you message
          let messageDiv = document.createElement('div')
-         messageDiv.innerHTML = '<h3>Thank you for voting! Click "Back to Home" for more quizzes!</h3>'
+         messageDiv.innerHTML = '<h3>Thank you for voting! Click "Back to Home" for more quizzes or feel free to retake this one!</h3>'
          this.container.appendChild(messageDiv)
 
       })
