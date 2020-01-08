@@ -1,6 +1,5 @@
 class Category {
 
-
    constructor(categoryJSON) {
       this.id = categoryJSON.id
       this.name = categoryJSON.attributes.name
